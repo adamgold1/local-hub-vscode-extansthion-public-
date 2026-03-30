@@ -673,7 +673,7 @@ Three daemon process management levels:
 
 Command line for terminal work (installed in `~/bin/lh.py`):
 
-```bash
+
 lh status          # Project status
 lh log [file]      # Project/file history
 lh diff <file>     # Diff with last version
@@ -688,19 +688,19 @@ lh ignore <file>   # Add file to exclusions
 lh tag <group>     # Add tag to group
 lh search <tag>    # Search by tags
 lh push            # Push to GitHub
-```
+
 
 ### Built-in Console
 
 All commands also available in built-in console without `lh` prefix:
 
-```bash
+
 status             # Project status
 log [file]         # History
 diff <file>        # Compare
 restore <file>     # Recovery
 # ... and all other commands
-```
+
 
 
 ## Technologies
@@ -723,7 +723,7 @@ restore <file>     # Recovery
 **Islam Dev**
 
 > "Every change is a save point. Never lose your code."
-```
+
 
 
 
@@ -870,9 +870,9 @@ LocalHub — это полноценная "Машина Времени" для 
 - **Python** 3.9+ с pip
 
 ### Из VSIX
-```bash
+
 code --install-extension localhub-3.0.1.vsix --force
-```
+
 
 
 ## Быстрый старт
