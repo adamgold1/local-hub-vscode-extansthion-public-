@@ -807,3 +807,153 @@ code --install-extension localhub-3.0.1.vsix --force
 ## Автор
 **Islam Dev** — [standaloneaistorm.com](https://standaloneaistorm.com)
 > "Каждое изменение — это точка сохранения. Никогда не теряй свой код."
+
+---
+
+# LocalHub — 代码时光机
+
+**自动本地文件版本控制。无需Git命令，无需提交 — 一切都在后台运行。**
+
+LocalHub 是您代码的完整"时光机"。每个重要操作都会自动创建文件快照。分支、组、差异导航器、AI分析、插件、云同步、全局文件监控 — 开箱即用。
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+## 目录
+- [功能特性](#功能特性)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [安装](#安装)
+- [快速开始](#快速开始)
+- [LocalHub — 功能](#localhub--功能)
+- [智能功能 — AI分析](#智能功能--ai分析)
+- [可视化](#可视化)
+- [Global Watcher — 全局监控](#global-watcher--全局监控)
+- [面板和界面](#面板和界面)
+- [设置](#设置)
+- [快捷键](#快捷键)
+- [CLI](#cli)
+- [技术](#技术)
+- [作者](#作者)
+
+## 功能特性
+
+### 核心
+- **自动快照** — 7个智能触发器（保存、标签切换、编辑、失去焦点、空闲、外部更改、删除）
+- **去重** — 相同内容只存储一次（SHA-256哈希）
+- **分支** — 并行版本线，支持合并、cherry-pick、导出/导入
+- **僵尸分支** — 完全控制已删除的分支和提交，可恢复
+- **更改组** — 类似提交的概念，带自动标签和AI描述生成
+- **组标签搜索** — 手动分配自定义文本标签，快速搜索
+- **差异导航器** — 交互式更改审查，每个块都有接受/拒绝
+- **拒绝块回收站** — 保存所有拒绝的代码片段以供后续恢复
+- **Blame** — 谁在何时更改了每一行（类似`git blame`）
+- **Bisect** — 二分搜索错误版本（类似`git bisect`）
+- **精确管理** — 通过UI从分支或提交中删除任何文件
+
+### 监控
+- **Global Watcher** — 后台操作系统级文件监控，即使没有IDE也能工作
+- **无缝共生** — 全局观察器和本地中心之间的自动数据传输
+- **云同步** — Google Drive、OneDrive、Dropbox、Yandex Disk或自定义API
+- **备份** — 带轮换的集中备份
+
+### AI和分析
+- **8个智能分析器** —预测、热图、重构、更改速度、依赖关系、集群、分析
+- **Agent Diary** — 自动记录AI代理操作
+- **Storm Code集成** — 基于AI代理响应的自动提交
+- **回收站保护** — AI无法从回收站删除文件
+
+### 可视化
+- **3D网格** — 三维项目可视化
+- **时光机** — 穿越项目状态的时间旅行
+- **代码回放** — 作为视频播放编码会话
+- **分支树** — 可视化分支树
+- **组更改树** — 整个文件组的更改可视化（手风琴和经典模式）
+- **依赖图** — 交互式文件关系图（Nexus Vision）
+- **符号时间线** — 函数和类的时间线
+
+### 可扩展性
+- **插件系统** — 安装、启用/禁用、配置、市场
+- **CLI** — 终端工作的命令行
+- **内置LH控制台** — 程序内的完整终端
+- **150+ API端点** — 对所有功能的完全程序访问
+- **Shadow Sandboxes** — 用于AI和人工审查的隔离工作副本
+- **Universal MCP** — MCP客户端的标准项目级引导
+
+---
+
+# LocalHub — कोड के लिए टाइम मशीन
+
+**स्वचालित स्थानीय फ़ाइल संस्करण। कोई Git कमांड नहीं, कोई कमिट नहीं — सब कुछ बैकग्राउंड में।**
+
+LocalHub आपके कोड के लिए एक पूर्ण "टाइम मशीन" है। हर महत्वपूर्ण क्रिया स्वचालित रूप से फ़ाइल स्नैपशॉट बनाती है।
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+## विषय-सूची
+- [विशेषताएं](#विशेषताएं)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [स्थापना](#स्थापना)
+- [त्वरित शुरुआत](#त्वरित-शुरुआत)
+- [LocalHub — कार्यक्षमता](#localhub--कार्यक्षमता)
+
+---
+
+# LocalHub — Máquina del Tiempo para Código
+
+**Versionado automático local de archivos. Sin comandos Git, sin commits — todo en segundo plano.**
+
+LocalHub es una "Máquina del Tiempo" completa para tu código. Cada acción significativa crea automáticamente una instantánea del archivo.
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+## Tabla de Contenidos
+- [Características](#características)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [Instalación](#instalación)
+- [Inicio Rápido](#inicio-rápido)
+
+---
+
+# LocalHub — آلة الزمن للكود
+
+**إصدارات الملفات المحلية التلقائية. بدون أوامر Git، بدون commits — كل شيء في الخلفية.**
+
+LocalHub هو "آلة زمن" كاملة لكودك. كل إجراء مهم ينشئ تلقائياً لقطة للملف.
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+<div dir="rtl">
+
+## جدول المحتويات
+- [المميزات](#المميزات)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [التثبيت](#التثبيت)
+- [البداية السريعة](#البداية-السريعة)
+
+## المميزات
+
+### النواة
+- **اللقطات التلقائية** — 7 محفزات ذكية (الحفظ، تبديل التبويبات، التحرير، فقدان التركيز، الخمول، التغييرات الخارجية، الحذف)
+- **إلغاء التكرار** — المحتوى المتطابق يُخزن مرة واحدة (تجزئة SHA-256)
+- **الفروع** — خطوط إصدارات متوازية مع دمج، cherry-pick، تصدير/استيراد
+- **الفروع الزومبي** — تحكم كامل بالفروع والـ commits المحذوفة مع إمكانية الاستعادة
+- **مجموعات التغييرات** — مماثل للـ commits مع وسم تلقائي وتوليد وصف بالذكاء الاصطناعي
+- **البحث بوسوم المجموعات** — تعيين يدوي لوسوم نصية مخصصة مع بحث سريع
+- **متصفح الفروقات** — مراجعة تفاعلية للتغييرات مع قبول/رفض لكل كتلة
+
+</div>
