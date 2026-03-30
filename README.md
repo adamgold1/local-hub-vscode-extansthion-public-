@@ -158,13 +158,13 @@ Python dependencies are installed automatically on first run.
 
 | Trigger | Description |
 |---------|-------------|
-| **File Save** | Ctrl+S or autosave тЖТ snapshot `auto:save` |
+| **File Save** | Ctrl+S or autosave → snapshot `auto:save` |
 | **Tab Switch** | Snapshot of old file (`tab_switch`) and new (`tab_focus`) |
-| **File Open** | Explorer click тЖТ `explorer_click` |
-| **Text Editing** | After 2 sec pause тЖТ detailed reason: `added:"code"`, `deleted:15chars`, `replaced:"text"` |
-| **Focus Loss** | IDE minimize тЖТ snapshot of open file |
+| **File Open** | Explorer click → `explorer_click` |
+| **Text Editing** | After 2 sec pause → detailed reason: `added:"code"`, `deleted:15chars`, `replaced:"text"` |
+| **Focus Loss** | IDE minimize → snapshot of open file |
 | **Idle** | Configurable idle interval (default 5 min) |
-| **External Changes** | AI agents, terminal, other editors тЖТ `external:change` |
+| **External Changes** | AI agents, terminal, other editors → `external:change` |
 
 Each snapshot records detailed reason — shows not just "file changed", but what exactly happened.
 
@@ -234,7 +234,7 @@ Full control over deleted data:
 
 Advanced diff visualization with semantic analysis:
 
-- **Version Chain** — v1 тЖТ v2 тЖТ v3 тЖТ ... тЖТ vN in one view
+- **Version Chain** — v1 → v2 → v3 → ... → vN in one view
 - **Group Change Trees** — unique change visualization for entire file group
 - **Accordion Mode** — compact view with click expansion
 - **Classic View** — traditional change tree with beautiful design
@@ -248,7 +248,7 @@ Advanced diff visualization with semantic analysis:
 
 Navigator for step-by-step change review (like code review in Git):
 
-- **Navigation** — тЧА Previous / тЦ╢ Next block
+- **Navigation** — ◀ Previous / ▶ Next block
 - **Accept/Reject** — accept or reject each change block
 - **Apply Decisions** — surgical application of selected blocks only
 - **Rejected Trash** — all rejected blocks saved for later recovery
