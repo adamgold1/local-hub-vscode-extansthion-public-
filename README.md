@@ -30,6 +30,58 @@ LocalHub is a complete "Time Machine" for your code. Every significant action au
 
 
 
+
+### All Screenshots Gallery
+
+<div align="center">
+  <img src="./assets/WindowSnip_20260329_214846.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_214918.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215006.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215015.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215041.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215100.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215137.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215157.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215209.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215215.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215220.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215226.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215233.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215238.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215248.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215304.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215310.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215317.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215347.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215358.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215406.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215436.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222318.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222339.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222349.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222354.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222444.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222449.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223436.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223634.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223657.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223742.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223819.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223826.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224056.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224123.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224146.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224736.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224758.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225013.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225034.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225101.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225209.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225229.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225242.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225453.png" width="80%" style="margin-bottom: 20px;" />
+</div>
+
 ## Table of Contents
 
 - [Features](#features)
@@ -701,6 +753,58 @@ LocalHub — это полноценная "Машина Времени" для 
   <br/><em>Global Watcher: 18,439 снимков кода, 10 папок на мониторинге, 235MB</em>
 </p>
 
+
+
+### Галерея всех скриншотов
+
+<div align="center">
+  <img src="./assets/WindowSnip_20260329_214846.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_214918.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215006.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215015.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215041.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215100.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215137.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215157.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215209.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215215.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215220.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215226.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215233.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215238.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215248.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215304.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215310.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215317.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215347.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215358.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215406.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_215436.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222318.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222339.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222349.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222354.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222444.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_222449.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223436.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223634.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223657.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223742.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223819.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_223826.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224056.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224123.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224146.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224736.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_224758.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225013.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225034.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225101.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225209.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225229.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225242.png" width="80%" style="margin-bottom: 20px;" />
+  <img src="./assets/WindowSnip_20260329_225453.png" width="80%" style="margin-bottom: 20px;" />
+</div>
 
 ## Оглавление
 - [Возможности](#возможности)
