@@ -22,6 +22,10 @@ assets/**
 python/**/*.py
 bundled-plugins/**/*.py
 localhub-tray/**
+out/time_travel.js
+out/time_travel.js.map
+out/trash.js
+out/trash.js.map
 
 # Webview UI (exclude source, include build)
 webview-ui/**
