@@ -360,6 +360,13 @@ Direct file management via visual interface:
 - SSH Push for advanced users
 - Sync branch configuration
 
+### Universal Git Remote
+
+- Add named project-local git remotes without changing GitHub sync
+- Supports HTTPS, SSH, scp-style URLs, `file://`, local paths, and UNC paths
+- Separate push command and separate UI button
+- Stores remotes only in `.localhub/config.json`
+
 ### Git Integration
 
 - **Auto Git Commit** — automatic `git commit` on TM Group confirmation
@@ -430,6 +437,26 @@ Automatic logging of AI agent actions:
 | **Dependency Overlay** | Dependency analysis — static imports vs. co-changes |
 | **Smart Clusters** | Automatic detection of logical file groups |
 | **Analytics Dashboard** | Overall project health statistics |
+
+### Show All Features Command Center
+
+`Ctrl+Alt+H` opens the fullscreen feature hub. The current command center exposes 13 connected tools:
+
+| Tool | Surface |
+|------|---------|
+| **Predictive Suggestions** | Features panel |
+| **Timeline View** | Features panel |
+| **Activity Heatmap** | Features panel |
+| **Refactoring Hints** | Features panel |
+| **Change Velocity** | Features panel |
+| **Dependency Overlay** | Features panel |
+| **Smart Clusters** | Features panel |
+| **Analytics Dashboard** | Features panel |
+| **Relationships** | Full graph workspace |
+| **3D Grid** | 3D workspace |
+| **Time Machine** | Time Travel suite |
+| **Code Replay** | Time Travel suite |
+| **Branch Tree** | Time Travel suite |
 
 
 ## Visualizations
@@ -673,7 +700,7 @@ Three daemon process management levels:
 
 Command line for terminal work (installed in `~/bin/lh.py`):
 
-
+```bash
 lh status          # Project status
 lh log [file]      # Project/file history
 lh diff <file>     # Diff with last version
@@ -688,19 +715,22 @@ lh ignore <file>   # Add file to exclusions
 lh tag <group>     # Add tag to group
 lh search <tag>    # Search by tags
 lh push            # Push to GitHub
-
+lh remote add origin https://host/user/repo.git
+lh remote list
+lh remote push [name] [branch]
+```
 
 ### Built-in Console
 
 All commands also available in built-in console without `lh` prefix:
 
-
+```bash
 status             # Project status
 log [file]         # History
 diff <file>        # Compare
 restore <file>     # Recovery
 # ... and all other commands
-
+```
 
 
 ## Technologies
@@ -723,22 +753,22 @@ restore <file>     # Recovery
 **Islam Dev**
 
 > "Every change is a save point. Never lose your code."
+```
 
 
 
-
-# LocalHub — Машина Времени для Кода
+# LocalHub — Time Machine for Code
 
 **Автоматическое локальное версионирование файлов. Без Git команд, без коммитов — всё в фоне.**
 
 LocalHub — это полноценная "Машина Времени" для вашего кода. Каждое значимое действие автоматически создаёт снимок файла. Ветки, группы, diff-навигатор, AI-аналитика, плагины, облачный синк, глобальный мониторинг файлов — всё из коробки.
 
-🌐 **Сайт:** [standaloneaistorm.com](https://standaloneaistorm.com)
-
 ![Version](https://img.shields.io/badge/version-3.0.1-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
 ![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+---
 
 
 ## Скриншоты
@@ -752,8 +782,6 @@ LocalHub — это полноценная "Машина Времени" для 
   <img src="./assets/screenshot-watcher.png" width="100%" alt="LocalHub Global Watcher" />
   <br/><em>Global Watcher: 18,439 снимков кода, 10 папок на мониторинге, 235MB</em>
 </p>
-
-
 
 ### Галерея всех скриншотов
 
@@ -807,21 +835,45 @@ LocalHub — это полноценная "Машина Времени" для 
 </div>
 
 ## Оглавление
+
 - [Возможности](#возможности)
 - [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
 - [Universal MCP](./docs/UNIVERSAL_MCP.md)
 - [Установка](#установка)
 - [Быстрый старт](#быстрый-старт)
 - [LocalHub — Функционал](#localhub--функционал)
+  - [Автоматические снимки](#автоматические-снимки)
+  - [История файлов](#история-файлов)
+  - [Восстановление](#восстановление)
+  - [Группы изменений (TM Groups)](#группы-изменений-tm-groups)
+  - [LHL Mode — Автогруппировка](#lhl-mode--автогруппировка)
+  - [Ветки](#ветки)
+  - [Зомби-ветки и Зомби-коммиты](#зомби-ветки-и-зомби-коммиты)
+  - [Tree Diff — Визуализация изменений](#tree-diff--визуализация-изменений)
+  - [Diff Navigator — Интерактивный обзор](#diff-navigator--интерактивный-обзор)
+  - [Корзина отклоненных блоков](#корзина-отклоненных-блоков)
+  - [Blame и Bisect](#blame-и-bisect)
+  - [Хирургическое управление файлами](#хирургическое-управление-файлами)
+  - [Удалённые файлы (Корзина)](#удалённые-файлы-корзина)
+  - [Резервное копирование](#резервное-копирование)
+  - [GitHub синхронизация](#github-синхронизация)
+  - [Git интеграция](#git-интеграция)
+  - [Storm Code интеграция](#storm-code-интеграция)
+  - [Встроенная консоль LH](#встроенная-консоль-lh)
+  - [Плагины](#плагины)
+  - [Agent Diary — Дневник AI](#agent-diary--дневник-ai)
+  - [Защита от AI удаления](#защита-от-ai-удаления)
 - [Smart Features — AI-аналитика](#smart-features--ai-аналитика)
+- [Визуализации](#визуализации)
 - [Global Watcher — Глобальный мониторинг](#global-watcher--глобальный-мониторинг)
 - [Панели и интерфейс](#панели-и-интерфейс)
 - [Настройки](#настройки)
 - [Горячие клавиши](#горячие-клавиши)
-- [CLI](#cli-1)
+- [CLI](#cli)
 - [Технологии](#технологии)
 - [Автор](#автор)
 
+---
 
 ## Возможности
 
@@ -831,9 +883,11 @@ LocalHub — это полноценная "Машина Времени" для 
 - **Ветки** — параллельные линии версионирования с merge, cherry-pick, export/import
 - **Зомби-ветки** — полный контроль над удалёнными ветками и коммитами с возможностью восстановления
 - **Группы изменений** — аналог коммитов с автотегированием и AI-генерацией описаний
+- **Поиск по тегам групп** — ручное присвоение собственных текстовых тегов с быстрым поиском
 - **Diff-навигатор** — интерактивный обзор изменений с Accept/Reject на каждый блок
 - **Корзина отклоненных блоков** — сохранение всех rejected кусков кода для последующего восстановления
-- **Blame и Bisect** — кто и когда изменил каждую строку (как `git blame`), бинарный поиск версии с багом (как `git bisect`)
+- **Blame** — кто и когда изменил каждую строку (как `git blame`)
+- **Bisect** — бинарный поиск версии с багом (как `git bisect`)
 - **Хирургическое управление** — удаление любого файла из ветки или коммита через UI
 
 ### Мониторинг
@@ -853,15 +907,19 @@ LocalHub — это полноценная "Машина Времени" для 
 - **Time Machine** — путешествие во времени по состояниям проекта
 - **Code Replay** — воспроизведение сессии кодирования как видео
 - **Branch Tree** — визуальное дерево веток
-- **Групповые деревья изменений** — визуализация правок для всей группы файлов
+- **Групповые деревья изменений** — визуализация правок для всей группы файлов (режимы "гармошка" и классический)
 - **Граф зависимостей** — интерактивный граф связей файлов (Nexus Vision)
+- **Symbol Timeline** — временная линия функций и классов
 
 ### Расширяемость
 - **Система плагинов** — установка, включение/отключение, конфигурация, маркетплейс
 - **CLI** — командная строка для работы из терминала
 - **Встроенная консоль LH** — полноценный терминал внутри программы
 - **150+ API эндпоинтов** — полный программный доступ ко всему функционалу
+- **Shadow Sandboxes** — изолированные рабочие копии для AI и human review: create/status/diff/checkout/return/merge/destroy
+- **Universal MCP** — стандартный project-level `.vscode/mcp.json` bootstrap для MCP-клиентов
 
+---
 
 ## Установка
 
@@ -870,25 +928,924 @@ LocalHub — это полноценная "Машина Времени" для 
 - **Python** 3.9+ с pip
 
 ### Из VSIX
-
+```bash
+# Скачать .vsix файл
 code --install-extension localhub-3.0.1.vsix --force
+```
 
+### Из исходников (разработка)
+```bash
+git clone <repo>
+cd localhub-vscode
+npm install
+npm run compile
+# F5 для запуска в debug режиме
+```
 
+Python зависимости устанавливаются автоматически при первом запуске.
+
+---
 
 ## Быстрый старт
 
 1. Откройте проект в VS Code
 2. LocalHub автоматически запустит daemon-сервер
 3. Начните работать — снимки создаются автоматически
-4. Сайдбар **LocalHub** показывает историю, файлы, группы, ветки
+4. Боковая панель **LocalHub** показывает историю, файлы, группы, ветки
 5. `Ctrl+Alt+S` — ручной снимок
 6. `Ctrl+Alt+H` — показать все возможности
 7. `Ctrl+Alt+L` — открыть встроенную консоль LH
 
+---
+
+## LocalHub — Функционал
+
+### Автоматические снимки
+
+7 умных триггеров автоматически создают снимки файлов:
+
+| Триггер | Описание |
+|---------|----------|
+| **Сохранение файла** | Ctrl+S или автосохранение → снимок `auto:save` |
+| **Переключение табов** | Снимок старого файла (`tab_switch`) и нового (`tab_focus`) |
+| **Открытие файла** | Клик в проводнике → `explorer_click` |
+| **Редактирование текста** | Через 2 сек после паузы → детальная причина: `added:"код"`, `deleted:15chars`, `replaced:"текст"` |
+| **Потеря фокуса** | Сворачивание IDE → снимок открытого файла |
+| **Idle** | Настраиваемый интервал бездействия (по умолчанию 5 мин) |
+| **Внешние изменения** | AI агенты, терминал, другие редакторы → `external:change` |
+
+Каждый снимок записывает детальную причину — видно не просто "файл изменился", а что именно произошло.
+
+### История файлов
+
+- Полная история всех версий в боковой панели
+- Поиск по истории с фильтрами (файл, дата, причина, ветка)
+- **Звёздные файлы** — фиксация версии звёздочкой с полной защитой от удаления
+- **Контекстный прыжок** — переход из звёздной версии напрямую в соответствующую TM группу
+- Звёздочки показывают привязку к TM группе — можно увидеть состояние всего проекта на тот момент
+- Редактирование описания версии
+- Удаление ненужных версий
+
+### Восстановление
+
+- **Полное восстановление** — откат файла на любую версию в один клик
+- **Частичное восстановление (Partial Restore)** — выбрать конкретные блоки для восстановления
+- **Diff** — сравнение любой версии с текущим файлом
+- Перед восстановлением автоматически создаётся страховочный снимок
+
+### Группы изменений (TM Groups)
+
+Группы — это аналог коммитов. Набор связанных изменений, подтверждённых вместе.
+
+- **Подтверждение группы** — собрать накопленные изменения в группу
+- **Smart Confirm** — умное подтверждение с автоматическим анализом
+- **AI-генерация описания** — автоматическое создание summary через AI
+- **Автотегирование** — 15+ типов тегов: `new-function`, `bugfix`, `refactor`, `api-change`, `ui-change`, `ai-generated` и др.
+- **Ручные теги** — присвоение собственных текстовых тегов для каждой группы
+- **Поиск по тегам** — быстрый поиск групп по автоматическим и ручным тегам
+- **Фильтрация по тегам** — поиск групп по типу изменений
+- **Перетегирование** — пересчитать теги для всех групп
+
+### LHL Mode — Автогруппировка
+
+Автоматическое создание групп без ручного подтверждения:
+
+- **По таймауту** — группа создаётся после N минут бездействия (по умолчанию 10 мин)
+- **По количеству** — группа создаётся после N сохранений (по умолчанию 10)
+- **Шаблон имени** — `{count}`, `{time}`, `{date}`, `{files}` для генерации имён
+
+### Ветки
+
+Параллельные линии версионирования, как в Git:
+
+- **Создание ветки** — ответвление от текущего состояния
+- **Переключение** — мгновенный switch между ветками
+- **Merge** — слияние веток с обнаружением конфликтов
+- **Selective Merge** — выбрать какие файлы сливать
+- **Smart Merge** — умное слияние с предпросмотром
+- **Cherry-Pick** — выбрать отдельные изменения из другой ветки
+- **Export/Import** — экспорт ветки в ZIP и импорт обратно
+- **Stash** — отложить текущие изменения и вернуть позже
+
+### Зомби-ветки и Зомби-коммиты
+
+Полный контроль над удалёнными данными:
+
+- **Зомби-ветки** — удалённые ветки не исчезают, а переходят в состояние "зомби"
+- **Восстановление веток** — возможность восстановить любую удалённую ветку в один клик
+- **Зомби-коммиты** — удалённые группы коммитов сохраняются в специальной корзине
+- **Восстановление групп** — восстановление целой группы коммитов со всеми файлами
+- **Удаление коммитов** — возможность удалять коммиты с сохранением содержимого или полным уничтожением
+- **История удалений** — полный лог всех удалений с возможностью отката
+
+### Tree Diff — Визуализация изменений
+
+Продвинутая визуализация diff-ов с семантическим анализом:
+
+- **Цепочка версий** — v1 → v2 → v3 → ... → vN в одном виде
+- **Групповые деревья изменений** — уникальная визуализация правок для всей группы файлов
+- **Режим "гармошка"** — компактный вид с разворачиванием по клику
+- **Классический вид** — традиционное дерево изменений с красивым оформлением
+- **Семантический анализ** — показывает "добавлена функция `getUser()`", а не просто "строки 15-20"
+- **Поддержка языков** — Python, JavaScript, TypeScript, Go, Rust, Java, C#, PHP, Ruby
+- **10 тем иконок** — Vivid, Minimal, Neon, Pastel, Earth, Aurora, Sunset, Ocean, Candy, Matrix
+- **Настраиваемый контекст** — количество строк вокруг изменений (0-20)
+- **Режимы** — Collapsed, Step-by-step Chain, Summary
+
+### Diff Navigator — Интерактивный обзор
+
+Навигатор для пошагового обзора изменений (как code review в Git):
+
+- **Навигация** — ◀ Предыдущий / ▶ Следующий блок
+- **Accept/Reject** — принять или отклонить каждый блок изменений
+- **Применить решения** — хирургическое применение только выбранных блоков
+- **Корзина отклоненных** — все rejected блоки сохраняются для последующего восстановления
+- Горячие клавиши в панели редактора
+
+### Корзина отклоненных блоков
+
+Уникальная система сохранения отклонённого кода:
+
+- **Автосохранение** — все rejected блоки автоматически попадают в корзину
+- **Категоризация** — блоки группируются по файлам и сессиям review
+- **Восстановление** — любой отклонённый блок можно вернуть обратно
+- **Поиск** — быстрый поиск по содержимому отклонённых блоков
+- **История отклонений** — полный лог с датой, временем и контекстом
+- **Срок хранения** — настраиваемый период (по умолчанию 30 дней)
+
+### Blame и Bisect
+
+Git-подобные инструменты для анализа:
+
+- **Blame** — для каждой строки файла: в какой версии появилась, когда, почему
+- **Bisect** — бинарный поиск версии с багом:
+  1. Указываете "версия X хорошая, версия Y плохая"
+  2. Система показывает версию посередине
+  3. Вы проверяете — повторяете до нахождения точной версии
+
+### Хирургическое управление файлами
+
+Прямое управление файлами через визуальный интерфейс:
+
+- **Удаление из ветки** — выкинуть любой файл из ветки через контекстное меню
+- **Удаление из коммита** — убрать файл из уже созданного коммита
+- **Мгновенный перенос в исключения** — отправка файла в `.localhubignore` прямо из UI
+- **Остановка отслеживания** — файл перестаёт отслеживаться, но история сохраняется
+- **Массовые операции** — выбор нескольких файлов для групповых действий
+- **Визуальный режим** — все операции доступны через drag & drop
+
+### Удалённые файлы (Корзина)
+
+- Все удалённые файлы сохраняются в корзину
+- Просмотр истории удалённого файла
+- Восстановление одного файла или всех сразу
+- Настраиваемый срок хранения (по умолчанию 30 дней)
+- Очистка корзины
+
+### Резервное копирование
+
+- **Централизованный бэкап** — копирование снимков в отдельную папку (внешний диск, NAS, облако)
+- **Ротация** — автоматическое удаление бэкапов старше N дней
+- **Восстановление из бэкапа** — полное восстановление проекта
+
+### GitHub синхронизация
+
+- Загрузка проекта на GitHub через Personal Access Token
+- Клонирование из GitHub
+- Автосинк при подтверждении группы
+- SSH Push для продвинутых пользователей
+- Настройка ветки для синхронизации
+
+### Universal Git Remote
+
+- Именованные project-local git remote без изменения GitHub-синка
+- Поддержка HTTPS, SSH, scp-style URL, `file://`, локальных путей и UNC
+- Отдельная команда push и отдельная кнопка в UI
+- Хранение только в `.localhub/config.json`
+
+### Git интеграция
+
+- **Auto Git Commit** — автоматический `git commit` при подтверждении TM Group
+- **Auto Push** — автоматический `git push` после коммита
+- **Настраиваемый префикс** для commit-сообщений
+
+### Storm Code интеграция
+
+Автоматические коммиты на основе работы AI агентов:
+
+- **Отслеживание ответов** — система мониторит ответы агентов в Storm Code
+- **Триггерные слова** — «Готово», «Сделал», «Выполнено», «Done», «Completed»
+- **Автокоммит** — при обнаружении триггера автоматически создаётся коммит
+- **AI описание** — ответ агента используется как официальное описание коммита
+- **Связка с задачами** — коммит автоматически привязывается к задаче в Storm Code
+- **История агента** — все коммиты агента доступны в отдельной панели
+
+### Встроенная консоль LH
+
+Полноценный терминал внутри программы:
+
+- **Быстрый доступ** — `Ctrl+Alt+L` для открытия консоли
+- **Все команды LH** — доступны без префикса `lh`
+- **Автодополнение** — интеллектуальные подсказки для команд и файлов
+- **История команд** — навигация стрелками вверх/вниз
+- **Цветовая подсветка** — syntax highlighting для вывода
+- **Интеграция с UI** — результаты команд отображаются в панелях
+- **Макросы** — создание собственных команд-алиасов
+
+### Плагины
+
+Расширяемая система плагинов:
+
+- Установка плагинов из папки или маркетплейса
+- Включение/отключение без удаления
+- Конфигурация каждого плагина через UI
+- Проверка обновлений
+- Плагины реагируют на события (сохранение файла, подтверждение группы и др.)
+
+### Agent Diary — Дневник AI
+
+Автоматическое логирование действий AI агентов:
+
+- Запись всех сохранений, коммитов, операций с ветками
+- Логирование команд терминала
+- Файлы дневника в `.localhub/agent/` — читаемый Markdown
+- Следующий AI агент может использовать дневник как "память"
+- Настраиваемая ротация логов
+
+### Защита от AI удаления
+
+- AI агенты **не могут** очистить корзину, удалить файлы из корзины или стереть историю
+- Только пользователь через UI может выполнять деструктивные операции
+- Лог всех попыток удаления
+
+---
+
+## Smart Features — AI-аналитика
+
+8 умных анализаторов на основе истории изменений:
+
+| Анализатор | Описание |
+|------------|----------|
+| **Predictive Suggestions** | Предсказание файлов, которые вы скорее всего будете менять |
+| **Timeline View** | Визуальная временная линия изменений проекта |
+| **Activity Heatmap** | Тепловая карта — какие файлы меняются чаще всего |
+| **Refactoring Hints** | Рекомендации по рефакторингу на основе паттернов изменений |
+| **Change Velocity** | Скорость изменений во времени — когда проект развивается быстрее |
+| **Dependency Overlay** | Анализ зависимостей — статические импорты vs. co-changes |
+| **Smart Clusters** | Автоматическое обнаружение логических групп файлов |
+| **Analytics Dashboard** | Общая статистика здоровья проекта |
+
+### Show All Features Command Center
+
+`Ctrl+Alt+H` открывает полноэкранный центр возможностей. Сейчас в нём 13 связанных инструментов:
+
+| Инструмент | Где открывается |
+|------------|-----------------|
+| **Predictive Suggestions** | Панель Features |
+| **Timeline View** | Панель Features |
+| **Activity Heatmap** | Панель Features |
+| **Refactoring Hints** | Панель Features |
+| **Change Velocity** | Панель Features |
+| **Dependency Overlay** | Панель Features |
+| **Smart Clusters** | Панель Features |
+| **Analytics Dashboard** | Панель Features |
+| **Relationships** | Полноэкранный граф связей |
+| **3D Grid** | 3D workspace |
+| **Time Machine** | Набор Time Travel |
+| **Code Replay** | Набор Time Travel |
+| **Branch Tree** | Набор Time Travel |
+
+---
+
+## Визуализации
+
+| Визуализация | Описание |
+|-------------|----------|
+| **3D Grid** | Трёхмерная визуализация структуры проекта |
+| **Time Machine** | Путешествие во времени — просмотр состояния проекта в любой момент |
+| **Code Replay** | Воспроизведение сессии кодирования как ускоренное видео |
+| **Branch Tree** | Визуальное дерево веток с иерархией и историей |
+| **Граф зависимостей** | Интерактивный граф связей файлов (co-changes) |
+| **Nexus Vision** | Продвинутый граф с кластерами, фильтрами и анимацией |
+| **Symbol Timeline** | Временная линия функций и классов |
+| **Групповые деревья** | Визуализация изменений для всей группы файлов |
+
+### Nexus Vision 3D внутри 3D Grid
+
+`3D Grid` теперь работает в двух ритмах:
+
+- **Classic** — старый космический режим: формы, физика, палитры, скорость, zoom, explode/implode.
+- **Nexus 3D** — режим смыслового слоя поверх той же сцены: файл перестаёт быть просто шаром и начинает показывать состояние LocalHub и живые сигналы редактора.
+
+Что показывает `Nexus 3D`:
+
+- **Синий цвет и контур** — файл сейчас находится в `Pending Changes`.
+- **Золотой halo** — у файла есть звёздная, защищённая версия.
+- **Жёлтый → оранжевый → красный heat** — файл часто меняется в истории проекта.
+- **Красная аура** — у файла есть live error из диагностики редактора.
+- **Warnings** выводятся в правой панели и badge-ами, без отдельной тяжёлой ауры на сцене.
+
+Что открывается по клику:
+
+- путь файла;
+- статус LocalHub;
+- краткая архитектура файла: symbols, classes, functions, methods;
+- список ошибок и предупреждений;
+- `Open File`, `Rescan`, прыжок на конкретную строку проблемы.
+
+Источник данных здесь честный и локальный:
+
+- мир собирается из tracked files, pending, starred, heatmap и графа связей;
+- symbols берутся через `DocumentSymbolProvider`;
+- diagnostics идут из VS Code / LSP;
+- если live symbols молчат, используется последняя snapshot metadata из истории LocalHub.
+
+---
+
+## Global Watcher — Глобальный мониторинг
+
+Global Watcher — отдельная система для мониторинга файлов на уровне ОС. Работает независимо от VS Code — пока запущен daemon, файлы отслеживаются.
+
+### Возможности
+
+- **Мониторинг любых папок** — не только открытый проект, а любые папки на компьютере
+- **Независимость от IDE** — работает пока запущен daemon-процесс
+- **Глобальные и локальные папки** — глобальные видны из любого проекта, локальные — только из текущего
+- **150+ исключений по умолчанию** — node_modules, .git, __pycache__, и др.
+- **Поддержка .localhubignore** — своя система игнорирования файлов в каждой папке
+- **Бесшовный симбиоз** — автоматическая передача актуальной картины в локальный хаб при открытии редактора
+
+### История и восстановление
+
+- Полная история версий для каждого отслеживаемого файла
+- Просмотр, diff, восстановление любой версии
+- Отслеживание удалённых файлов
+- Настраиваемое хранение (дни, макс. версий)
+
+### Облачная синхронизация
+
+- **Папочный режим** — синхронизация через Google Drive, OneDrive, Dropbox, Yandex Disk (автоопределение)
+- **API режим** — синхронизация через HTTP API
+- **Мгновенная или периодическая** синхронизация
+- Статус и прогресс в панели
+
+### Экспорт проектов
+
+- Экспорт папки в ZIP с последними версиями файлов
+- Опционально — с полной историей (все версии)
+
+### Управление
+
+Три уровня управления daemon-процессами:
+
+| Уровень | Описание | Кнопки |
+|---------|----------|--------|
+| **Main Daemon** | Весь Python процесс | Start, Stop, Restart |
+| **LocalHub Daemon** | Сервер проектов | Start, Stop, Restart |
+| **Global Watcher** | Модуль мониторинга | Start, Stop, Restart |
+
+### Панель настроек
+
+5 вкладок в полной панели:
+
+1. **Overview** — статистика, статус daemon-ов
+2. **Folders** — управление наблюдаемыми папками (глобальные + локальные)
+3. **History** — файлы, версии, восстановление, удалённые файлы
+4. **Cloud Sync** — облачная синхронизация (настройка сервиса, sync now)
+5. **Settings** — debounce, исключения, ротация, бэкап
+
+---
+
+## Панели и интерфейс
+
+### Боковая панель LocalHub (11 секций)
+
+| Панель | Описание |
+|--------|----------|
+| **File History** | Все версии выбранного файла со звёздными отметками |
+| **Tracked Files** | Все файлы с историей в проекте |
+| **Pending Changes** | Несгруппированные изменения |
+| **TM Groups** | Подтверждённые группы с тегами и поиском |
+| **Branches** | Ветки версионирования |
+| **Zombie Branches** | Корзина удалённых веток |
+| **Zombie Commits** | Корзина удалённых коммитов |
+| **Rejected Blocks** | Корзина отклонённых блоков кода |
+| **Deleted Files** | Корзина — удалённые файлы |
+| **Dashboard** | Статистика и метрики проекта |
+| **Relationships** | Граф связей файлов |
+| **Smart Features** | AI-анализаторы |
+
+### Боковая панель Global Watcher
+
+| Панель | Описание |
+|--------|----------|
+| **Overview** | Статус, статистика, управление daemon-ами |
+| **Watch Folders** | Список папок для мониторинга |
+
+### Встроенная консоль
+
+| Элемент | Описание |
+|---------|----------|
+| **Command Line** | Поле ввода с автодополнением |
+| **Output** | Цветной вывод результатов |
+| **History** | История выполненных команд |
+| **Macros** | Список сохранённых макросов |
+
+### Панель настроек (11 вкладок)
+
+| Вкладка | Содержимое |
+|---------|-----------|
+| **General** | Основные настройки, LHL mode, игнорирование, управление daemon |
+| **Global Watcher** | Включение GW, папки, параметры хранения, симбиоз |
+| **Backup** | Централизованный бэкап, корзина |
+| **Git Sync** | Автоматический git commit/push |
+| **GitHub** | Token, repo, auto-sync |
+| **Storm Code** | Интеграция с AI агентами, триггерные слова |
+| **Console** | Настройки встроенной консоли, макросы |
+| **Advanced** | Python path, порт, маркетплейс, Agent Diary |
+| **Tree Diff** | Тема иконок, семантический анализ, контекст, режимы |
+| **Plugins** | Управление плагинами |
+| **About** | О программе, статистика |
+
+---
+
+## Настройки
+
+### Основные
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.enabled` | `true` | Включить LocalHub |
+| `localhub.autoSave` | `true` | Автоматические снимки |
+| `localhub.debounceMs` | `2000` | Задержка перед снимком (мс) |
+| `localhub.maxVersionsPerFile` | `100` | Макс. версий на файл |
+| `localhub.idleCheckpointMinutes` | `5` | Снимок при бездействии (0 = откл.) |
+
+### LHL Mode
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.lhlMode` | `false` | Автогруппировка |
+| `localhub.lhl.timeoutMinutes` | `10` | Таймаут бездействия |
+| `localhub.lhl.threshold` | `10` | Порог по количеству |
+| `localhub.lhl.namePattern` | — | Шаблон имени группы |
+
+### Global Watcher
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.enableGlobalWatcher` | `true` | Включить глобальный мониторинг |
+| `localhub.globalWatchPaths` | `[]` | Глобальные папки |
+| `localhub.localWatchPaths` | `[]` | Локальные папки |
+| `localhub.excludePatterns` | 150+ шт. | Паттерны для исключения |
+| `localhub.seamlessSync` | `true` | Бесшовный симбиоз с локальным хабом |
+
+### Бэкап и корзины
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.backup.enabled` | `true` | Центральный бэкап |
+| `localhub.backup.centralPath` | — | Папка бэкапа |
+| `localhub.backup.retentionDays` | `30` | Ротация бэкапов (0 = вечно) |
+| `localhub.trash.retentionDays` | `30` | Хранение удалённых файлов |
+| `localhub.zombies.retentionDays` | `90` | Хранение зомби-веток и коммитов |
+| `localhub.rejected.retentionDays` | `30` | Хранение отклонённых блоков |
+
+### Storm Code интеграция
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.stormCode.enabled` | `false` | Включить интеграцию |
+| `localhub.stormCode.triggers` | `["Готово", "Сделал", "Done"]` | Триггерные слова |
+| `localhub.stormCode.autoCommit` | `true` | Автоматические коммиты |
+| `localhub.stormCode.useAgentResponse` | `true` | Использовать ответ как описание |
+
+### Встроенная консоль
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.console.enabled` | `true` | Включить консоль |
+| `localhub.console.historySize` | `1000` | Размер истории команд |
+| `localhub.console.autoComplete` | `true` | Автодополнение |
+| `localhub.console.colorOutput` | `true` | Цветной вывод |
+
+### GitHub
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.github.enabled` | `false` | Включить GitHub синк |
+| `localhub.github.token` | — | Personal Access Token |
+| `localhub.github.owner` | — | Username |
+| `localhub.github.repo` | — | Repository |
+| `localhub.github.branch` | `main` | Ветка |
+| `localhub.github.syncOnConfirm` | `false` | Авто-синк при подтверждении |
+
+### Git
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.git.syncOnConfirm` | `false` | Auto git commit |
+| `localhub.git.autoPush` | `false` | Auto git push |
+| `localhub.git.commitPrefix` | — | Префикс для коммитов |
+
+### Tree Diff
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.treeDiff.semanticAnalysis` | `true` | Семантический анализ кода |
+| `localhub.treeDiff.contextLines` | `3` | Строки контекста (0-20) |
+| `localhub.treeDiff.reviewMode` | `true` | Accept/Reject кнопки |
+| `localhub.treeDiff.groupMode` | `accordion` | Режим для групп (accordion/classic) |
+| `localhub.icons.theme` | `vivid` | Тема иконок (10 вариантов) |
+
+### Продвинутые
+
+| Настройка | По умолчанию | Описание |
+|-----------|-------------|----------|
+| `localhub.pythonPath` | `python` | Путь до Python |
+| `localhub.serverPort` | `19876` | Порт сервера |
+| `localhub.agentDiary.enabled` | `true` | Дневник AI агента |
+| `localhub.marketplaceUrl` | — | URL маркетплейса плагинов |
+| `localhub.customTags` | `[]` | Список пользовательских тегов |
+
+---
+
+## Горячие клавиши
+
+| Комбинация | Действие |
+|-----------|----------|
+| `Ctrl+Alt+H` | Показать все возможности |
+| `Ctrl+Alt+S` | Создать снимок |
+| `Ctrl+Alt+B` | Создать ветку |
+| `Ctrl+Alt+T` | Показать корзину |
+| `Ctrl+Alt+Shift+T` | Показать корзину веток |
+| `Ctrl+Alt+Shift+G` | Показать корзину TM групп |
+| `Ctrl+Alt+Shift+R` | Показать корзину отклонённых блоков |
+| `Ctrl+Alt+R` | Показать бэкапы |
+| `Ctrl+Alt+Shift+R` | Восстановить из бэкапа |
+| `Ctrl+Alt+L` | Открыть встроенную консоль |
+| `Ctrl+Alt+X` | Хирургическое удаление файла |
+| `Ctrl+Alt+I` | Добавить файл в исключения |
+
+---
+
+## CLI
+
+Командная строка для работы из терминала (устанавливается в `~/bin/lh.py`):
+
+```bash
+lh status          # Статус проекта
+lh log [file]      # История проекта/файла
+lh diff <file>     # Diff с последней версией
+lh restore <file>  # Восстановить файл
+lh branch          # Список веток
+lh branch trash    # Корзина удалённых веток
+lh group           # Список TM групп
+lh group trash     # Корзина удалённых TM групп
+lh rejected        # Корзина отклонённых блоков
+lh surgery <file>  # Хирургическое удаление файла
+lh ignore <file>   # Добавить файл в исключения
+lh tag <group>     # Добавить тег к группе
+lh search <tag>    # Поиск по тегам
+lh push            # Push на GitHub
+lh remote add origin https://host/user/repo.git
+lh remote list
+lh remote push [name] [branch]
+```
+
+### Встроенная консоль
+
+Все команды доступны также во встроенной консоли без префикса `lh`:
+
+```bash
+status             # Статус проекта
+log [file]         # История
+diff <file>        # Сравнение
+restore <file>     # Восстановление
+# ... и все остальные команды
+```
+
+---
+
+## Технологии
+
+| Компонент | Технология |
+|-----------|-----------|
+| IDE расширение | TypeScript, VS Code Extension API |
+| Сервер | Python, FastAPI, Uvicorn |
+| База данных | SQLite |
+| Хранилище файлов | Content-addressable storage (SHA-256) |
+| Файловый мониторинг | watchdog (Python) + VS Code FileSystemWatcher |
+| Граф визуализация | Cytoscape.js |
+| 3D визуализация | Three.js |
+| Встроенная консоль | xterm.js + node-pty |
+| Поддержка IDE | VS Code и любые IDE на базе VS Code |
+
+---
 
 ## Автор
-**Islam Dev** — [standaloneaistorm.com](https://standaloneaistorm.com)
+
+**Islam Dev**
+
 > "Каждое изменение — это точка сохранения. Никогда не теряй свой код."
+```
+# LocalHub — 代码时光机
+
+**自动本地文件版本控制。无需Git命令，无需提交 — 一切都在后台运行。**
+
+LocalHub 是您代码的完整"时光机"。每个重要操作都会自动创建文件快照。分支、组、差异导航器、AI分析、插件、云同步、全局文件监控 — 开箱即用。
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+---
+
+## 目录
+
+- [功能特性](#功能特性)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [安装](#安装)
+- [快速开始](#快速开始)
+- [LocalHub — 功能](#localhub--功能)
+  - [自动快照](#自动快照)
+  - [文件历史](#文件历史)
+  - [恢复](#恢复)
+  - [更改组 (TM Groups)](#更改组-tm-groups)
+  - [LHL模式 — 自动分组](#lhl模式--自动分组)
+  - [分支](#分支)
+  - [僵尸分支和僵尸提交](#僵尸分支和僵尸提交)
+  - [树形差异 — 更改可视化](#树形差异--更改可视化)
+  - [差异导航器 — 交互式审查](#差异导航器--交互式审查)
+  - [拒绝块回收站](#拒绝块回收站)
+  - [Blame和Bisect](#blame和bisect)
+  - [文件精确管理](#文件精确管理)
+  - [已删除文件（回收站）](#已删除文件回收站)
+  - [备份](#备份)
+  - [GitHub同步](#github同步)
+  - [Git集成](#git集成)
+  - [Storm Code集成](#storm-code集成)
+  - [内置LH控制台](#内置lh控制台)
+  - [插件](#插件)
+  - [Agent Diary — AI日志](#agent-diary--ai日志)
+  - [AI删除保护](#ai删除保护)
+- [智能功能 — AI分析](#智能功能--ai分析)
+- [可视化](#可视化)
+- [Global Watcher — 全局监控](#global-watcher--全局监控)
+- [面板和界面](#面板和界面)
+- [设置](#设置)
+- [快捷键](#快捷键)
+- [CLI](#cli)
+- [技术](#技术)
+- [作者](#作者)
+
+---
+
+## 功能特性
+
+### 核心
+- **自动快照** — 7个智能触发器（保存、标签切换、编辑、失去焦点、空闲、外部更改、删除）
+- **去重** — 相同内容只存储一次（SHA-256哈希）
+- **分支** — 并行版本线，支持合并、cherry-pick、导出/导入
+- **僵尸分支** — 完全控制已删除的分支和提交，可恢复
+- **更改组** — 类似提交的概念，带自动标签和AI描述生成
+- **组标签搜索** — 手动分配自定义文本标签，快速搜索
+- **差异导航器** — 交互式更改审查，每个块都有接受/拒绝
+- **拒绝块回收站** — 保存所有拒绝的代码片段以供后续恢复
+- **Blame** — 谁在何时更改了每一行（类似`git blame`）
+- **Bisect** — 二分搜索错误版本（类似`git bisect`）
+- **精确管理** — 通过UI从分支或提交中删除任何文件
+
+### 监控
+- **Global Watcher** — 后台操作系统级文件监控，即使没有IDE也能工作
+- **无缝共生** — 全局观察器和本地中心之间的自动数据传输
+- **云同步** — Google Drive、OneDrive、Dropbox、Yandex Disk或自定义API
+- **备份** — 带轮换的集中备份
+
+### AI和分析
+- **8个智能分析器** — 预测、热图、重构、更改速度、依赖关系、集群、分析
+- **Agent Diary** — 自动记录AI代理操作
+- **Storm Code集成** — 基于AI代理响应的自动提交
+- **回收站保护** — AI无法从回收站删除文件
+
+### 可视化
+- **3D网格** — 三维项目可视化
+- **时光机** — 穿越项目状态的时间旅行
+- **代码回放** — 作为视频播放编码会话
+- **分支树** — 可视化分支树
+- **组更改树** — 整个文件组的更改可视化（手风琴和经典模式）
+- **依赖图** — 交互式文件关系图（Nexus Vision）
+- **符号时间线** — 函数和类的时间线
+
+### 可扩展性
+- **插件系统** — 安装、启用/禁用、配置、市场
+- **CLI** — 终端工作的命令行
+- **内置LH控制台** — 程序内的完整终端
+- **150+ API端点** — 对所有功能的完全程序访问
+- **Shadow Sandboxes** — 用于AI和人工审查的隔离工作副本：create/status/diff/checkout/return/merge/destroy
+- **Universal MCP** — MCP客户端的标准项目级`.vscode/mcp.json`引导
+
+[继续完整的中文文档...]
+
+# LocalHub — कोड के लिए टाइम मशीन
+
+**स्वचालित स्थानीय फ़ाइल संस्करण। कोई Git कमांड नहीं, कोई कमिट नहीं — सब कुछ बैकग्राउंड में।**
+
+LocalHub आपके कोड के लिए एक पूर्ण "टाइम मशीन" है। हर महत्वपूर्ण क्रिया स्वचालित रूप से फ़ाइल स्नैपशॉट बनाती है। शाखाएं, समूह, डिफ नेविगेटर, AI एनालिटिक्स, प्लगइन्स, क्लाउड सिंक, वैश्विक फ़ाइल मॉनिटरिंग — सब कुछ बॉक्स से बाहर।
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+---
+
+## विषय-सूची
+
+- [विशेषताएं](#विशेषताएं)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [स्थापना](#स्थापना)
+- [त्वरित शुरुआत](#त्वरित-शुरुआत)
+- [LocalHub — कार्यक्षमता](#localhub--कार्यक्षमता)
+  - [स्वचालित स्नैपशॉट](#स्वचालित-स्नैपशॉट)
+  - [फ़ाइल इतिहास](#फाइल-इतिहास)
+  - [पुनर्प्राप्ति](#पुनर्प्राप्ति)
+  - [परिवर्तन समूह (TM Groups)](#परिवर्तन-समूह-tm-groups)
+  - [LHL मोड — ऑटो-समूहीकरण](#lhl-मोड--ऑटो-समूहीकरण)
+  - [शाखाएं](#शाखाएं)
+  - [ज़ोंबी शाखाएं और ज़ोंबी कमिट](#जोंबी-शाखाएं-और-जोंबी-कमिट)
+  - [ट्री डिफ — परिवर्तन विज़ुअलाइज़ेशन](#ट्री-डिफ--परिवर्तन-विजुअलाइजेशन)
+  - [डिफ नेविगेटर — इंटरैक्टिव समीक्षा](#डिफ-नेविगेटर--इंटरैक्टिव-समीक्षा)
+  - [अस्वीकृत ब्लॉक ट्रैश](#अस्वीकृत-ब्लॉक-ट्रैश)
+  - [Blame और Bisect](#blame-और-bisect)
+  - [सर्जिकल फ़ाइल प्रबंधन](#सर्जिकल-फाइल-प्रबंधन)
+  - [हटाई गई फ़ाइलें (ट्रैश)](#हटाई-गई-फाइलें-ट्रैश)
+  - [बैकअप](#बैकअप)
+  - [GitHub सिंक्रोनाइज़ेशन](#github-सिंक्रोनाइजेशन)
+  - [Git एकीकरण](#git-एकीकरण)
+  - [Storm Code एकीकरण](#storm-code-एकीकरण)
+  - [बिल्ट-इन LH कंसोल](#बिल्ट-इन-lh-कंसोल)
+  - [प्लगइन्स](#प्लगइन्स)
+  - [Agent Diary — AI लॉग](#agent-diary--ai-लॉग)
+  - [AI डिलीशन सुरक्षा](#ai-डिलीशन-सुरक्षा)
+- [स्मार्ट फीचर्स — AI एनालिटिक्स](#स्मार्ट-फीचर्स--ai-एनालिटिक्स)
+- [विज़ुअलाइज़ेशन](#विजुअलाइजेशन)
+- [Global Watcher — वैश्विक मॉनिटरिंग](#global-watcher--वैश्विक-मॉनिटरिंग)
+- [पैनल और इंटरफ़ेस](#पैनल-और-इंटरफेस)
+- [सेटिंग्स](#सेटिंग्स)
+- [हॉटकी](#हॉटकी)
+- [CLI](#cli)
+- [प्रौद्योगिकी](#प्रौद्योगिकी)
+- [लेखक](#लेखक)
+
+[पूर्ण हिंदी दस्तावेज़ जारी...]
+
+# LocalHub — Máquina del Tiempo para Código
+
+**Versionado automático local de archivos. Sin comandos Git, sin commits — todo en segundo plano.**
+
+LocalHub es una "Máquina del Tiempo" completa para tu código. Cada acción significativa crea automáticamente una instantánea del archivo. Ramas, grupos, navegador de diferencias, análisis de IA, plugins, sincronización en la nube, monitoreo global de archivos — todo listo para usar.
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+---
+
+## Tabla de Contenidos
+
+- [Características](#características)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [Instalación](#instalación)
+- [Inicio Rápido](#inicio-rápido)
+- [LocalHub — Funcionalidad](#localhub--funcionalidad)
+  - [Instantáneas Automáticas](#instantáneas-automáticas)
+  - [Historial de Archivos](#historial-de-archivos)
+  - [Recuperación](#recuperación)
+  - [Grupos de Cambios (TM Groups)](#grupos-de-cambios-tm-groups)
+  - [Modo LHL — Auto-agrupación](#modo-lhl--auto-agrupación)
+  - [Ramas](#ramas)
+  - [Ramas Zombi y Commits Zombi](#ramas-zombi-y-commits-zombi)
+  - [Tree Diff — Visualización de Cambios](#tree-diff--visualización-de-cambios)
+  - [Navegador Diff — Revisión Interactiva](#navegador-diff--revisión-interactiva)
+  - [Papelera de Bloques Rechazados](#papelera-de-bloques-rechazados)
+  - [Blame y Bisect](#blame-y-bisect)
+  - [Gestión Quirúrgica de Archivos](#gestión-quirúrgica-de-archivos)
+  - [Archivos Eliminados (Papelera)](#archivos-eliminados-papelera)
+  - [Copia de Seguridad](#copia-de-seguridad)
+  - [Sincronización GitHub](#sincronización-github)
+  - [Integración Git](#integración-git)
+  - [Integración Storm Code](#integración-storm-code)
+  - [Consola LH Integrada](#consola-lh-integrada)
+  - [Plugins](#plugins)
+  - [Agent Diary — Registro IA](#agent-diary--registro-ia)
+  - [Protección contra Eliminación IA](#protección-contra-eliminación-ia)
+- [Características Inteligentes — Análisis IA](#características-inteligentes--análisis-ia)
+- [Visualizaciones](#visualizaciones)
+- [Global Watcher — Monitoreo Global](#global-watcher--monitoreo-global)
+- [Paneles e Interfaz](#paneles-e-interfaz)
+- [Configuración](#configuración)
+- [Teclas Rápidas](#teclas-rápidas)
+- [CLI](#cli)
+- [Tecnologías](#tecnologías)
+- [Autor](#autor)
+
+---
+
+## Características
+
+### Núcleo
+- **Instantáneas Automáticas** — 7 disparadores inteligentes (guardar, cambio de pestaña, edición, pérdida de foco, inactividad, cambios externos, eliminación)
+- **Deduplicación** — contenido idéntico almacenado una vez (hash SHA-256)
+- **Ramas** — líneas de versionado paralelas con merge, cherry-pick, exportar/importar
+- **Ramas Zombi** — control total sobre ramas y commits eliminados con capacidad de recuperación
+- **Grupos de Cambios** — análogo a commits con auto-etiquetado y generación de descripción IA
+- **Búsqueda por Etiquetas de Grupo** — asignación manual de etiquetas de texto personalizadas con búsqueda rápida
+- **Navegador Diff** — revisión interactiva de cambios con Aceptar/Rechazar para cada bloque
+- **Papelera de Bloques Rechazados** — guardado de todos los fragmentos de código rechazados para recuperación posterior
+- **Blame** — quién y cuándo cambió cada línea (como `git blame`)
+- **Bisect** — búsqueda binaria de versión con error (como `git bisect`)
+- **Gestión Quirúrgica** — eliminar cualquier archivo de rama o commit vía UI
+
+[Documentación completa en español continúa...]
+
+# LocalHub — آلة الزمن للكود
+
+**إصدارات الملفات المحلية التلقائية. بدون أوامر Git، بدون commits — كل شيء في الخلفية.**
+
+LocalHub هو "آلة زمن" كاملة لكودك. كل إجراء مهم ينشئ تلقائياً لقطة للملف. الفروع، المجموعات، متصفح الفروقات، تحليلات الذكاء الاصطناعي، الإضافات، المزامنة السحابية، مراقبة الملفات العالمية — كل شيء جاهز للاستخدام.
+
+![Version](https://img.shields.io/badge/version-3.0.1-blue)
+![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
+![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
+![Python](https://img.shields.io/badge/Python-3.9%2B-green)
+
+<div dir="rtl">
+
+## جدول المحتويات
+
+- [المميزات](#المميزات)
+- [Shadow Sandboxes](./docs/SHADOW_SANDBOXES.md)
+- [Universal MCP](./docs/UNIVERSAL_MCP.md)
+- [التثبيت](#التثبيت)
+- [البداية السريعة](#البداية-السريعة)
+- [LocalHub — الوظائف](#localhub--الوظائف)
+  - [اللقطات التلقائية](#اللقطات-التلقائية)
+  - [تاريخ الملفات](#تاريخ-الملفات)
+  - [الاستعادة](#الاستعادة)
+  - [مجموعات التغييرات (TM Groups)](#مجموعات-التغييرات-tm-groups)
+  - [وضع LHL — التجميع التلقائي](#وضع-lhl--التجميع-التلقائي)
+  - [الفروع](#الفروع)
+  - [الفروع الزومبي والـ Commits الزومبي](#الفروع-الزومبي-والـ-commits-الزومبي)
+  - [Tree Diff — تصور التغييرات](#tree-diff--تصور-التغييرات)
+  - [متصفح الفروقات — المراجعة التفاعلية](#متصفح-الفروقات--المراجعة-التفاعلية)
+  - [سلة المهملات للكتل المرفوضة](#سلة-المهملات-للكتل-المرفوضة)
+  - [Blame و Bisect](#blame-و-bisect)
+  - [إدارة الملفات الجراحية](#إدارة-الملفات-الجراحية)
+  - [الملفات المحذوفة (سلة المهملات)](#الملفات-المحذوفة-سلة-المهملات)
+  - [النسخ الاحتياطي](#النسخ-الاحتياطي)
+  - [مزامنة GitHub](#مزامنة-github)
+  - [تكامل Git](#تكامل-git)
+  - [تكامل Storm Code](#تكامل-storm-code)
+  - [وحدة تحكم LH المدمجة](#وحدة-تحكم-lh-المدمجة)
+  - [الإضافات](#الإضافات)
+  - [Agent Diary — سجل الذكاء الاصطناعي](#agent-diary--سجل-الذكاء-الاصطناعي)
+  - [حماية الحذف من الذكاء الاصطناعي](#حماية-الحذف-من-الذكاء-الاصطناعي)
+- [الميزات الذكية — تحليلات الذكاء الاصطناعي](#الميزات-الذكية--تحليلات-الذكاء-الاصطناعي)
+- [التصورات](#التصورات)
+- [Global Watcher — المراقبة العالمية](#global-watcher--المراقبة-العالمية)
+- [اللوحات والواجهة](#اللوحات-والواجهة)
+- [الإعدادات](#الإعدادات)
+- [مفاتيح الاختصار](#مفاتيح-الاختصار)
+- [CLI](#cli)
+- [التقنيات](#التقنيات)
+- [المؤلف](#المؤلف)
+
+---
+
+## المميزات
+
+### النواة
+- **اللقطات التلقائية** — 7 محفزات ذكية (الحفظ، تبديل التبويبات، التحرير، فقدان التركيز، الخمول، التغييرات الخارجية، الحذف)
+- **إلغاء التكرار** — المحتوى المتطابق يُخزن مرة واحدة (تجزئة SHA-256)
+- **الفروع** — خطوط إصدارات متوازية مع دمج، cherry-pick، تصدير/استيراد
+- **الفروع الزومبي** — تحكم كامل بالفروع والـ commits المحذوفة مع إمكانية الاستعادة
+- **مجموعات التغييرات** — مماثل للـ commits مع وسم تلقائي وتوليد وصف بالذكاء الاصطناعي
+- **البحث بوسوم المجموعات** — تعيين يدوي لوسوم نصية مخصصة مع بحث سريع
+- **متصفح الفروقات** — مراجعة تفاعلية للتغييرات مع قبول/رفض لكل كتلة
+- **سلة مهملات الكتل المرفوضة** — حفظ جميع أجزاء الكود المرفوضة للاستعادة اللاحقة
+- **Blame** — من ومتى غيّر كل سطر (مثل `git blame`)
+- **Bisect** — بحث ثنائي عن إصدار الخطأ (مثل `git bisect`)
+- **الإدارة الجراحية** — إزالة أي ملف من الفرع أو الـ commit عبر الواجهة
+
+</div>
+
+[الوثائق الكاملة بالعربية تستمر...]
 
 
 # LocalHub — 代码时光机

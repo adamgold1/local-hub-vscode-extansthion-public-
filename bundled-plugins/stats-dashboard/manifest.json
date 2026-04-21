@@ -1,0 +1,34 @@
+{
+  "name": "stats-dashboard",
+  "version": "1.0.0",
+  "description": "Activity statistics dashboard with charts and graphs",
+  "author": "LocalHub",
+  "entrypoint": "main.pyc",
+  "permissions": [
+    "read:history",
+    "read:branches",
+    "subscribe:events",
+    "storage:local"
+  ],
+  "events": [
+    "file:save",
+    "file:restore",
+    "group:confirm",
+    "branch:create",
+    "branch:switch",
+    "branch:delete",
+    "branch:merge"
+  ],
+  "config_schema": {
+    "retention_days": {
+      "type": "number",
+      "default": 30,
+      "description": "Days to keep statistics"
+    },
+    "track_hourly": {
+      "type": "boolean",
+      "default": true,
+      "description": "Track hourly activity patterns"
+    }
+  }
+}

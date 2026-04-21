@@ -1,0 +1,2285 @@
+{
+  "name": "localhub",
+  "displayName": "LocalHub - Time Machine",
+  "description": "Automatic local file versioning without Git commands",
+  "version": "3.0.1",
+  "publisher": "islam-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamgold1/local-hub-vscode-extansthion-public-.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "version control",
+    "backup",
+    "history",
+    "time machine",
+    "local git"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "icon": "logo.png",
+  "contributes": {
+    "mcpServerDefinitionProviders": [
+      { "id": "localhub", "label": "LocalHub" }
+    ],
+    "commands": [
+      {
+        "command": "localhub.showHistory",
+        "title": "Show File History",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.openSettings",
+        "title": "Open Settings",
+        "category": "lh",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "localhub.toggleReliabilityMode",
+        "title": "Toggle Reliability Mode",
+        "category": "lh",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "localhub.setReliabilityModeClassic",
+        "title": "Set Reliability Mode: Classic",
+        "category": "lh",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "localhub.setReliabilityModeResilient",
+        "title": "Set Reliability Mode: Resilient",
+        "category": "lh",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "localhub.openGlobalWatcher",
+        "title": "Open Global Watcher Settings",
+        "category": "lh",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "localhub.enableGlobalWatcherBridge",
+        "title": "Enable Global Watcher Bridge",
+        "category": "lh",
+        "icon": "$(link)"
+      },
+      {
+        "command": "localhub.disableGlobalWatcherBridge",
+        "title": "Disable Global Watcher Bridge",
+        "category": "lh",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "localhub.toggleGlobalWatcherBridge",
+        "title": "Toggle Global Watcher Bridge",
+        "category": "lh",
+        "icon": "$(link)"
+      },
+      {
+        "command": "localhub.enableGlobalWatcherGitStyleDiskVerify",
+        "title": "Enable Git-Style Disk Verify",
+        "category": "lh",
+        "icon": "$(search)"
+      },
+      {
+        "command": "localhub.disableGlobalWatcherGitStyleDiskVerify",
+        "title": "Disable Git-Style Disk Verify",
+        "category": "lh",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "localhub.toggleGlobalWatcherGitStyleDiskVerify",
+        "title": "Toggle Git-Style Disk Verify",
+        "category": "lh",
+        "icon": "$(search)"
+      },
+      {
+        "command": "localhub.startGlobalWatcher",
+        "title": "Start Global Watcher Daemon",
+        "category": "lh",
+        "icon": "$(play)"
+      },
+      {
+        "command": "localhub.stopGlobalWatcher",
+        "title": "Stop Global Watcher Daemon",
+        "category": "lh",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "localhub.gwAddFolder",
+        "title": "Add Watch Folder",
+        "category": "lh",
+        "icon": "$(add)"
+      },
+      {
+        "command": "localhub.gwRemoveFolder",
+        "title": "Remove Watch Folder",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.gwScanFolder",
+        "title": "Initialize/Scan Folder",
+        "category": "lh",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "localhub.gwRefreshFolders",
+        "title": "Refresh Folders",
+        "category": "lh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "localhub.showDocumentation",
+        "title": "Show Documentation",
+        "category": "lh",
+        "icon": "$(book)"
+      },
+      {
+        "command": "localhub.openBackupFolder",
+        "title": "Open Backup Folder",
+        "category": "lh",
+        "icon": "$(folder)"
+      },
+      {
+        "command": "localhub.snapshot",
+        "title": "Create Snapshot",
+        "category": "lh",
+        "icon": "$(add)"
+      },
+      {
+        "command": "localhub.restore",
+        "title": "Restore Version",
+        "category": "lh",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "localhub.showDiff",
+        "title": "Show Diff",
+        "category": "lh",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "localhub.refreshHistory",
+        "title": "Refresh",
+        "category": "lh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "localhub.showStats",
+        "title": "Show Statistics",
+        "category": "lh",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "localhub.showOutput",
+        "title": "Show Server Logs",
+        "category": "lh",
+        "icon": "$(output)"
+      },
+      {
+        "command": "localhub.showHunks",
+        "title": "Partial Restore",
+        "category": "lh",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "localhub.deleteSnapshot",
+        "title": "Delete Version",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.deleteFileHistory",
+        "title": "Delete All History",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.toggleStar",
+        "title": "Toggle Star — find all starred versions via ⭐ button in toolbar above",
+        "category": "lh",
+        "icon": "$(star)"
+      },
+      {
+        "command": "localhub.editReason",
+        "title": "Edit Description",
+        "category": "lh",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "localhub.showStarred",
+        "title": "Show Starred Versions — click a version to open file or jump to its TM Group",
+        "category": "lh",
+        "icon": "$(star-full)"
+      },
+      {
+        "command": "localhub.confirmGroup",
+        "title": "Confirm Changes (OK)",
+        "category": "lh",
+        "icon": "$(check)"
+      },
+      {
+        "command": "localhub.generateSummary",
+        "title": "AI: Generate Commit Summary",
+        "category": "lh",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "localhub.refreshGroups",
+        "title": "Refresh Groups",
+        "category": "lh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "localhub.showFeatures",
+        "title": "Show All Features",
+        "category": "lh",
+        "icon": "$(info)"
+      },
+      {
+        "command": "localhub.openControlCenter",
+        "title": "Open Control Center (Tray App)",
+        "category": "lh",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "localhub.toggleLHL",
+        "title": "Toggle LHL Mode (Auto-Grouping)",
+        "category": "lh",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "localhub.enableLHL",
+        "title": "Enable LHL Mode",
+        "category": "lh",
+        "icon": "$(play)"
+      },
+      {
+        "command": "localhub.disableLHL",
+        "title": "Disable LHL Mode (Active)",
+        "category": "lh",
+        "icon": "$(primitive-square)"
+      },
+      {
+        "command": "localhub.enableAIAutoCommit",
+        "title": "Enable AI Auto-Commit",
+        "category": "lh",
+        "icon": "$(robot)"
+      },
+      {
+        "command": "localhub.disableAIAutoCommit",
+        "title": "Disable AI Auto-Commit (Active)",
+        "category": "lh",
+        "icon": "$(robot)"
+      },
+      {
+        "command": "localhub.collapseHistory",
+        "title": "Collapse All",
+        "category": "lh",
+        "icon": "$(collapse-all)"
+      },
+      {
+        "command": "localhub.expandHistory",
+        "title": "Expand All",
+        "category": "lh",
+        "icon": "$(expand-all)"
+      },
+      {
+        "command": "localhub.searchInHistory",
+        "title": "Search in History",
+        "category": "lh",
+        "icon": "$(search)"
+      },
+      {
+        "command": "localhub.initProject",
+        "title": "Initialize Project",
+        "category": "lh",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "localhub.openProject",
+        "title": "Open Project",
+        "category": "lh",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "localhub.createNewFolder",
+        "title": "Create New Folder",
+        "category": "lh",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "localhub.restoreProject",
+        "title": "Restore Project from Backup",
+        "category": "lh",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "localhub.restoreDeletedFile",
+        "title": "Restore Deleted File",
+        "category": "lh",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "localhub.showTrash",
+        "title": "Show Deleted Files (Trash)",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.showBranchTrash",
+        "title": "Show Deleted Branches (Branch Trash)",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.showGroupTrash",
+        "title": "Show Deleted TM Groups (Group Trash)",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.restoreGroup",
+        "title": "Restore Zombie TM Group",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.checkoutGroup",
+        "title": "Checkout TM Group",
+        "category": "lh",
+        "icon": "$(target)"
+      },
+      {
+        "command": "localhub.returnToThisTmGroup",
+        "title": "Return To This Forgotten Group",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.returnToBranchHead",
+        "title": "Return To Branch Head",
+        "category": "lh",
+        "icon": "$(debug-step-out)"
+      },
+      {
+        "command": "localhub.returnToForgottenGroups",
+        "title": "Return To Forgotten Groups",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.showGroupCheckoutStatus",
+        "title": "Show TM Group Checkout Status",
+        "category": "lh",
+        "icon": "$(info)"
+      },
+      {
+        "command": "localhub.showZombieGroups",
+        "title": "Zombie TM Groups: Inactive (Click to Show)",
+        "category": "lh",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "localhub.hideZombieGroups",
+        "title": "Zombie TM Groups: Active (Click to Hide)",
+        "category": "lh",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "localhub.toggleZombieGroups",
+        "title": "Toggle Zombie TM Groups",
+        "category": "lh",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "localhub.restoreAllZombieGroups",
+        "title": "Restore All Zombie TM Groups",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.emptyGroupTrash",
+        "title": "Empty Zombie TM Group Trash",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.emptyTrash",
+        "title": "Empty Trash (Delete All History of Deleted Files)",
+        "category": "lh",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "localhub.showPlugins",
+        "title": "Manage Plugins",
+        "category": "lh",
+        "icon": "$(extensions)"
+      },
+      {
+        "command": "localhub.installPlugin",
+        "title": "Install Plugin from Folder",
+        "category": "lh",
+        "icon": "$(add)"
+      },
+      {
+        "command": "localhub.enablePlugin",
+        "title": "Enable Plugin",
+        "category": "lh",
+        "icon": "$(check)"
+      },
+      {
+        "command": "localhub.disablePlugin",
+        "title": "Disable Plugin",
+        "category": "lh",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "localhub.removePlugin",
+        "title": "Remove Plugin",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.refreshPlugins",
+        "title": "Refresh Plugins",
+        "category": "lh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "localhub.showBackups",
+        "title": "Show Backups",
+        "category": "lh",
+        "icon": "$(database)"
+      },
+      {
+        "command": "localhub.restoreBackup",
+        "title": "Restore from Backup",
+        "category": "lh",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "localhub.deleteGroup",
+        "title": "Delete TM Group",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.removeFileFromGroup",
+        "title": "Remove from Group",
+        "category": "lh",
+        "icon": "$(close)"
+      },
+      {
+        "command": "localhub.ignoreFileFromGroup",
+        "title": "Add to Ignore (file)",
+        "category": "lh",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "localhub.ignoreDirFromGroup",
+        "title": "Add to Ignore (directory)",
+        "category": "lh",
+        "icon": "$(file-directory)"
+      },
+      {
+        "command": "localhub.createBranch",
+        "title": "Create Branch",
+        "category": "lh",
+        "icon": "$(add)"
+      },
+      {
+        "command": "localhub.enableSandboxes",
+        "title": "Enable Shadow Sandboxes",
+        "category": "lh",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "localhub.disableSandboxes",
+        "title": "Disable Shadow Sandboxes",
+        "category": "lh",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "localhub.createSandbox",
+        "title": "Create Shadow Sandbox",
+        "category": "lh",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "localhub.manageSandboxes",
+        "title": "Manage Shadow Sandboxes",
+        "category": "lh",
+        "icon": "$(tools)"
+      },
+      {
+        "command": "localhub.showMcpConfig",
+        "title": "Show Universal MCP Config",
+        "category": "lh",
+        "icon": "$(json)"
+      },
+      {
+        "command": "localhub.bootstrapMcp",
+        "title": "Bootstrap Universal MCP",
+        "category": "lh",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "localhub.removeMcpBootstrap",
+        "title": "Disconnect Universal MCP",
+        "category": "lh",
+        "icon": "$(debug-disconnect)"
+      },
+      {
+        "command": "localhub.switchBranch",
+        "title": "Switch Branch",
+        "category": "lh",
+        "icon": "$(arrow-swap)"
+      },
+      {
+        "command": "localhub.deleteBranch",
+        "title": "Delete Branch",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.restoreBranch",
+        "title": "Restore Zombie Branch",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.showZombieBranches",
+        "title": "Zombie Branches: Inactive (Click to Show)",
+        "category": "lh",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "localhub.hideZombieBranches",
+        "title": "Zombie Branches: Active (Click to Hide)",
+        "category": "lh",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "localhub.toggleZombieBranches",
+        "title": "Toggle Zombie Branches",
+        "category": "lh",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "localhub.restoreAllZombieBranches",
+        "title": "Restore All Zombie Branches",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.emptyBranchTrash",
+        "title": "Empty Zombie Branch Trash",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.refreshBranches",
+        "title": "Refresh Branches",
+        "category": "lh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "localhub.mergeBranch",
+        "title": "Merge Branch",
+        "category": "lh",
+        "icon": "$(git-merge)"
+      },
+      {
+        "command": "localhub.exportBranch",
+        "title": "Export Branch to ZIP",
+        "category": "lh",
+        "icon": "$(package)"
+      },
+      {
+        "command": "localhub.cleanupOldVersions",
+        "title": "Cleanup Old Versions",
+        "category": "lh",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "localhub.importBranch",
+        "title": "Import Branch from ZIP",
+        "category": "lh",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "localhub.syncToGitHub",
+        "title": "Sync to GitHub",
+        "category": "lh",
+        "icon": "$(cloud-upload)"
+      },
+      {
+        "command": "localhub.setupGitHub",
+        "title": "Setup GitHub Integration",
+        "category": "lh",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "localhub.setRemoteRepo",
+        "title": "Set Repo",
+        "category": "lh",
+        "icon": "$(git-fork)"
+      },
+      {
+        "command": "localhub.addUniversalRemote",
+        "title": "Add Universal Git Remote",
+        "category": "lh",
+        "icon": "$(add)"
+      },
+      {
+        "command": "localhub.pushToUniversalRemote",
+        "title": "Push to Universal Git Remote",
+        "category": "lh",
+        "icon": "$(repo-push)"
+      },
+      {
+        "command": "localhub.manageUniversalRemotes",
+        "title": "Manage Universal Git Remotes",
+        "category": "lh",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "localhub.showFileHistory",
+        "title": "Show File History",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.showFileDiff",
+        "title": "Show File Diff",
+        "category": "lh",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "localhub.browsePlugins",
+        "title": "Browse Marketplace",
+        "category": "lh",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "localhub.checkPluginUpdates",
+        "title": "Check Plugin Updates",
+        "category": "lh",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "localhub.setMarketplaceUrl",
+        "title": "Set Marketplace URL",
+        "category": "lh",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "localhub.blame",
+        "title": "Blame File",
+        "category": "lh",
+        "icon": "$(git-commit)"
+      },
+      {
+        "command": "localhub.bisectStart",
+        "title": "Bisect: Start Bug Search",
+        "category": "lh",
+        "icon": "$(search)"
+      },
+      {
+        "command": "localhub.bisectGood",
+        "title": "Bisect: Mark as Good",
+        "category": "lh",
+        "icon": "$(check)"
+      },
+      {
+        "command": "localhub.bisectBad",
+        "title": "Bisect: Mark as Bad",
+        "category": "lh",
+        "icon": "$(close)"
+      },
+      {
+        "command": "localhub.bisectReset",
+        "title": "Bisect: Cancel",
+        "category": "lh",
+        "icon": "$(discard)"
+      },
+
+      {
+        "command": "localhub.createIgnore",
+        "title": "Create .localhubignore",
+        "category": "lh",
+        "icon": "$(eye-closed)"
+      },
+      {
+        "command": "localhub.addToIgnore",
+        "title": "Add to .localhubignore (file)",
+        "category": "lh",
+        "icon": "$(exclude)"
+      },
+      {
+        "command": "localhub.addDirToIgnore",
+        "title": "Add to .localhubignore (directory)",
+        "category": "lh",
+        "icon": "$(file-directory)"
+      },
+      {
+        "command": "localhub.revertPendingFile",
+        "title": "Revert Pending File",
+        "category": "lh",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "localhub.revertAllPending",
+        "title": "Revert All Pending Changes",
+        "category": "lh",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "localhub.terminalBranch",
+        "title": "Terminal: List Branches",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.terminalPush",
+        "title": "Terminal: Push to GitHub",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.terminalStatus",
+        "title": "Terminal: Show Status",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.cloneFromGitHub",
+        "title": "Clone from GitHub",
+        "category": "lh",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "localhub.setupSSH",
+        "title": "Setup SSH Key",
+        "category": "lh",
+        "icon": "$(key)"
+      },
+      {
+        "command": "localhub.pushSSH",
+        "title": "Push via SSH/Git",
+        "category": "lh",
+        "icon": "$(repo-push)"
+      },
+      {
+        "command": "localhub.terminalBranchRemote",
+        "title": "Terminal: List Remote Branches",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.terminalBranchAll",
+        "title": "Terminal: List All Branches",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.terminalRepo",
+        "title": "Repo",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.refreshGraph",
+        "title": "Refresh Graph",
+        "category": "lh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "localhub.graphFilter",
+        "title": "Filter Graph",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.openGraphFullTab",
+        "title": "Open Graph Full Tab",
+        "category": "lh",
+        "icon": "$(screen-full)"
+      },
+      {
+        "command": "localhub.openNexusFullTab",
+        "title": "Open Nexus Vision",
+        "category": "lh",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "localhub.toggleSidebarView",
+        "title": "Toggle Classic/Nexus View",
+        "category": "lh",
+        "icon": "$(arrow-swap)"
+      },
+      {
+        "command": "localhub.open3DGrid",
+        "title": "Open 3D Grid Visualization",
+        "category": "lh",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "localhub.openTimeMachine",
+        "title": "Open Time Machine",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.openCodeReplay",
+        "title": "Open Code Replay",
+        "category": "lh",
+        "icon": "$(play)"
+      },
+      {
+        "command": "localhub.openBranchTree",
+        "title": "Open Branch Tree",
+        "category": "lh",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "localhub.openTimeTravel",
+        "title": "Open Time Travel Suite",
+        "category": "lh",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "localhub.showSymbolTimeline",
+        "title": "Show Symbol Timeline",
+        "category": "lh",
+        "icon": "$(symbol-method)"
+      },
+      {
+        "command": "localhub.showTreeDiff",
+        "title": "Show Tree Diff",
+        "category": "lh",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "localhub.showGroupTreeDiff",
+        "title": "Show Group Tree Diff",
+        "category": "lh",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "localhub.showFullGroupTreeDiff",
+        "title": "Show Full Group Tree Diff",
+        "category": "lh",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "localhub.showGroupDetails",
+        "title": "Show Group Details",
+        "category": "lh",
+        "icon": "$(note)"
+      },
+      {
+        "command": "localhub.showPendingTreeDiff",
+        "title": "Show Pending Tree Diff",
+        "category": "lh",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "localhub.diffNav.prev",
+        "title": "◀ Previous Diff",
+        "category": "lh",
+        "icon": "$(arrow-left)"
+      },
+      {
+        "command": "localhub.diffNav.next",
+        "title": "▶ Next Diff",
+        "category": "lh",
+        "icon": "$(arrow-right)"
+      },
+      {
+        "command": "localhub.diffNav.accept",
+        "title": "✓ Accept Change",
+        "category": "lh",
+        "icon": "$(check)"
+      },
+      {
+        "command": "localhub.diffNav.reject",
+        "title": "✗ Reject Change",
+        "category": "lh",
+        "icon": "$(close)"
+      },
+      {
+        "command": "localhub.diffNav.apply",
+        "title": "⚡ Apply Decisions",
+        "category": "lh",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "localhub.diffNav.stop",
+        "title": "⏹ Close Navigator",
+        "category": "lh",
+        "icon": "$(close-all)"
+      },
+      {
+        "command": "localhub.showDiffNavigator",
+        "title": "Diff Navigator",
+        "category": "lh",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "localhub.compareVersions",
+        "title": "Compare Two Versions",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.analyzeGroupTags",
+        "title": "Analyze Group Tags",
+        "category": "lh",
+        "icon": "$(tag)"
+      },
+      {
+        "command": "localhub.filterByTag",
+        "title": "Search Groups by Tag",
+        "category": "lh",
+        "icon": "$(search)"
+      },
+      {
+        "command": "localhub.clearTagFilter",
+        "title": "Clear Tag Filter",
+        "category": "lh",
+        "icon": "$(close)"
+      },
+      {
+        "command": "localhub.retagAllGroups",
+        "title": "Re-tag All Groups",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.confirmGroupSmart",
+        "title": "Smart Confirm Group",
+        "category": "lh",
+        "icon": "$(check)"
+      },
+      {
+        "command": "localhub.openFeatures",
+        "title": "Open Smart Features",
+        "category": "lh",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "localhub.openFeature",
+        "title": "Open Feature",
+        "category": "lh"
+      },
+      {
+        "command": "localhub.feature.predictions",
+        "title": "Predictive Suggestions",
+        "category": "lh",
+        "icon": "$(lightbulb)"
+      },
+      {
+        "command": "localhub.feature.timeline",
+        "title": "Timeline View",
+        "category": "lh",
+        "icon": "$(history)"
+      },
+      {
+        "command": "localhub.feature.heatmap",
+        "title": "Activity Heatmap",
+        "category": "lh",
+        "icon": "$(flame)"
+      },
+      {
+        "command": "localhub.feature.refactoring",
+        "title": "Refactoring Hints",
+        "category": "lh",
+        "icon": "$(lightbulb-autofix)"
+      },
+      {
+        "command": "localhub.feature.velocity",
+        "title": "Change Velocity",
+        "category": "lh",
+        "icon": "$(graph-line)"
+      },
+      {
+        "command": "localhub.feature.dependencies",
+        "title": "Dependency Overlay",
+        "category": "lh",
+        "icon": "$(references)"
+      },
+      {
+        "command": "localhub.feature.clusters",
+        "title": "Smart Clusters",
+        "category": "lh",
+        "icon": "$(group-by-ref-type)"
+      },
+      {
+        "command": "localhub.feature.analytics",
+        "title": "Analytics Dashboard",
+        "category": "lh",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "localhub.openDashboardFullTab",
+        "title": "Open Dashboard (Full Tab)",
+        "category": "lh",
+        "icon": "$(screen-full)"
+      }
+    ],
+
+
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "localhub",
+          "title": "LocalHub",
+          "icon": "resources/lh-icon.svg"
+        },
+        {
+          "id": "globalWatcher",
+          "title": "Global Watcher",
+          "icon": "resources/gw-eye.svg"
+        }
+      ]
+    },
+    "views": {
+      "globalWatcher": [
+        {
+          "id": "gwOverview",
+          "name": "Overview",
+          "type": "webview",
+          "icon": "$(eye)"
+        },
+        {
+          "id": "gwFolders",
+          "name": "Watch Folders",
+          "icon": "$(folder)"
+        }
+      ],
+      "localhub": [
+        {
+          "id": "localhubTopSearch",
+          "name": "Search Files",
+          "type": "webview",
+          "icon": "$(search)",
+          "visibility": "visible",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubHistory",
+          "name": "File History",
+          "icon": "$(history)",
+          "contextualTitle": "LocalHub History"
+        },
+        {
+          "id": "localhubFiles",
+          "name": "Tracked Files",
+          "icon": "$(files)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubPending",
+          "name": "Pending Changes",
+          "type": "webview",
+          "icon": "$(source-control)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubGroups",
+          "name": "TM Groups",
+          "icon": "$(git-commit)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubBranches",
+          "name": "Branches",
+          "icon": "$(git-branch)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubDeleted",
+          "name": "Deleted Files",
+          "icon": "$(trash)",
+          "visibility": "visible",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubDashboard",
+          "name": "📊 Dashboard",
+          "type": "webview",
+          "icon": "$(dashboard)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubGraphView",
+          "name": "📈 Relationships",
+          "type": "webview",
+          "icon": "$(graph)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubFeaturesView",
+          "name": "🚀 Smart Features",
+          "type": "webview",
+          "icon": "$(rocket)",
+          "when": "workbenchState != empty"
+        },
+        {
+          "id": "localhubPlugins",
+          "name": "🔌 Plugins",
+          "type": "webview",
+          "icon": "$(extensions)",
+          "when": "workbenchState != empty"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "localhubDeleted",
+        "contents": "No deleted files found.\nFiles that were deleted from disk but have saved history will appear here."
+      },
+      {
+        "view": "localhubPlugins",
+        "contents": "No plugins installed.\n[Install Plugin](command:localhub.installPlugin)\n\nPlugins extend LocalHub functionality.\n[Browse Marketplace](command:localhub.browsePlugins)"
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState == empty",
+        "contents": "No project open."
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState == empty",
+        "contents": "[🚀 Initialize Project](command:localhub.initProject)"
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState == empty",
+        "contents": "[📁 Create New Folder](command:localhub.createNewFolder)"
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState == empty",
+        "contents": "[📂 Open Project](command:localhub.openProject)"
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState == empty",
+        "contents": "[🔄 Restore Project](command:localhub.restoreProject)"
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState == empty",
+        "contents": "Open or restore a folder to start LocalHub project features."
+      },
+      {
+        "view": "localhubHistory",
+        "when": "workbenchState != empty",
+        "contents": "No file history yet.\n[Create Snapshot](command:localhub.snapshot)\nOpen a file and start editing - snapshots are created automatically!"
+      },
+      {
+        "view": "localhubFiles",
+        "contents": "No tracked files yet.\nStart editing files and they will appear here automatically."
+      },
+      {
+        "view": "localhubGroups",
+        "contents": "No confirmed groups yet.\nClick OK to confirm pending changes into a group."
+      },
+      {
+        "view": "localhubBranches",
+        "when": "workbenchState == empty",
+        "contents": "No project open.\nUse File History actions to open, create, restore, or initialize a project."
+      },
+      {
+        "view": "localhubBranches",
+        "when": "workbenchState != empty",
+        "contents": "No branches yet.\nUse File History → Initialize Project to create 'main' branch and snapshot all files."
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "localhub.showFeatures",
+        "key": "ctrl+alt+h",
+        "mac": "ctrl+alt+h"
+      },
+      {
+        "command": "localhub.snapshot",
+        "key": "ctrl+alt+s",
+        "mac": "ctrl+alt+s"
+      },
+      {
+        "command": "localhub.createBranch",
+        "key": "ctrl+alt+b",
+        "mac": "ctrl+alt+b"
+      },
+      {
+        "command": "localhub.showTrash",
+        "key": "ctrl+alt+t",
+        "mac": "ctrl+alt+t"
+      },
+      {
+        "command": "localhub.showBranchTrash",
+        "key": "ctrl+alt+shift+t",
+        "mac": "ctrl+alt+shift+t"
+      },
+      {
+        "command": "localhub.showGroupTrash",
+        "key": "ctrl+alt+shift+g",
+        "mac": "ctrl+alt+shift+g"
+      },
+      {
+        "command": "localhub.createIgnore",
+        "key": "ctrl+alt+i",
+        "mac": "cmd+alt+i"
+      },
+      {
+        "command": "localhub.pushToUniversalRemote",
+        "key": "ctrl+alt+u",
+        "mac": "cmd+alt+u"
+      },
+      {
+        "command": "localhub.addUniversalRemote",
+        "key": "ctrl+alt+shift+u",
+        "mac": "cmd+alt+shift+u"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "localhub.openSettings",
+          "when": "view == localhubHistory",
+          "group": "navigation@0"
+        },
+        {
+          "command": "localhub.snapshot",
+          "when": "view == localhubHistory",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.refreshHistory",
+          "when": "view == localhubHistory",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.showStats",
+          "when": "view == localhubHistory",
+          "group": "navigation@4"
+        },
+        {
+          "command": "localhub.showFeatures",
+          "when": "view == localhubHistory || view == localhubFiles || view == localhubPending || view == localhubGroups",
+          "group": "navigation@5"
+        },
+        {
+          "command": "localhub.collapseHistory",
+          "when": "view == localhubHistory && !localhub:historyCollapsed",
+          "group": "navigation@99"
+        },
+        {
+          "command": "localhub.expandHistory",
+          "when": "view == localhubHistory && localhub:historyCollapsed",
+          "group": "navigation@99"
+        },
+        {
+          "command": "localhub.showTrash",
+          "when": "view == localhubHistory",
+          "group": "navigation@7"
+        },
+        {
+          "command": "localhub.showStarred",
+          "when": "view == localhubHistory",
+          "group": "navigation@6"
+        },
+        {
+          "command": "localhub.showPlugins",
+          "when": "view == localhubHistory || view == localhubPlugins",
+          "group": "navigation@8"
+        },
+        {
+          "command": "localhub.installPlugin",
+          "when": "view == localhubPlugins",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.initProject",
+          "when": "view == localhubFiles || view == localhubGroups || view == localhubBranches",
+          "group": "navigation@0"
+        },
+        {
+          "command": "localhub.refreshHistory",
+          "when": "view == localhubFiles",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.createIgnore",
+          "when": "view == localhubFiles",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.openGlobalWatcher",
+          "when": "view == localhubHistory",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.enableGlobalWatcherBridge",
+          "when": "view == localhubHistory && !localhub:gwBridgeEnabled",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.disableGlobalWatcherBridge",
+          "when": "view == localhubHistory && localhub:gwBridgeEnabled",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.syncToGitHub",
+          "when": "view == localhubPending",
+          "group": "navigation@0"
+        },
+        {
+          "command": "localhub.pushToUniversalRemote",
+          "when": "view == localhubPending",
+          "group": "navigation@0.5"
+        },
+        {
+          "command": "localhub.cloneFromGitHub",
+          "when": "view == localhubPending",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.revertAllPending",
+          "when": "view == localhubPending",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.refreshGroups",
+          "when": "view == localhubPending",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.enableLHL",
+          "when": "view == localhubPending && !localhub:lhlMode",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.disableLHL",
+          "when": "view == localhubPending && localhub:lhlMode",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.enableAIAutoCommit",
+          "when": "view == localhubPending && !localhub:aiAutoCommit",
+          "group": "navigation@4"
+        },
+        {
+          "command": "localhub.disableAIAutoCommit",
+          "when": "view == localhubPending && localhub:aiAutoCommit",
+          "group": "navigation@4"
+        },
+        {
+          "command": "localhub.createIgnore",
+          "when": "view == localhubPending",
+          "group": "navigation@5"
+        },
+        {
+          "command": "localhub.refreshGroups",
+          "when": "view == localhubGroups",
+          "group": "navigation"
+        },
+        {
+          "command": "localhub.createIgnore",
+          "when": "view == localhubGroups",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.filterByTag",
+          "when": "view == localhubGroups",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.clearTagFilter",
+          "when": "view == localhubGroups && localhub.tagFilterActive",
+          "group": "navigation@4"
+        },
+        {
+          "command": "localhub.showGroupTrash",
+          "when": "view == localhubGroups",
+          "group": "navigation@5"
+        },
+        {
+          "command": "localhub.showZombieGroups",
+          "when": "view == localhubGroups && !localhub.zombieGroupsVisible",
+          "group": "navigation@6"
+        },
+        {
+          "command": "localhub.hideZombieGroups",
+          "when": "view == localhubGroups && localhub.zombieGroupsVisible",
+          "group": "navigation@6"
+        },
+        {
+          "command": "localhub.returnToBranchHead",
+          "when": "view == localhubGroups && localhub.groupCheckoutActive",
+          "group": "navigation@0"
+        },
+        {
+          "command": "localhub.returnToForgottenGroups",
+          "when": "view == localhubGroups && localhub.hasForgottenGroups",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.createIgnore",
+          "when": "view == localhubBranches",
+          "group": "navigation@0"
+        },
+
+        {
+          "command": "localhub.createBranch",
+          "when": "view == localhubBranches",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.refreshBranches",
+          "when": "view == localhubBranches",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.showBranchTrash",
+          "when": "view == localhubBranches",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.showZombieBranches",
+          "when": "view == localhubBranches && !localhub.zombieBranchesVisible",
+          "group": "navigation@4"
+        },
+        {
+          "command": "localhub.hideZombieBranches",
+          "when": "view == localhubBranches && localhub.zombieBranchesVisible",
+          "group": "navigation@4"
+        },
+        {
+          "command": "localhub.enableSandboxes",
+          "when": "view == localhubBranches && !localhub:sandboxEnabled",
+          "group": "navigation@5"
+        },
+        {
+          "command": "localhub.disableSandboxes",
+          "when": "view == localhubBranches && localhub:sandboxEnabled",
+          "group": "navigation@5"
+        },
+        {
+          "command": "localhub.createSandbox",
+          "when": "view == localhubBranches",
+          "group": "navigation@6"
+        },
+        {
+          "command": "localhub.manageSandboxes",
+          "when": "view == localhubBranches",
+          "group": "navigation@7"
+        },
+        {
+          "command": "localhub.showMcpConfig",
+          "when": "view == localhubBranches",
+          "group": "navigation@8"
+        },
+        {
+          "command": "localhub.bootstrapMcp",
+          "when": "view == localhubBranches",
+          "group": "navigation@9"
+        },
+        {
+          "command": "localhub.removeMcpBootstrap",
+          "when": "view == localhubBranches",
+          "group": "navigation@10"
+        },
+        {
+          "command": "localhub.gwAddFolder",
+          "when": "view == gwFolders",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.gwRefreshFolders",
+          "when": "view == gwFolders",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.setReliabilityModeResilient",
+          "when": "view == gwOverview && localhub:reliabilityModeClassic",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.setReliabilityModeClassic",
+          "when": "view == gwOverview && localhub:reliabilityModeResilient",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.toggleSidebarView",
+          "when": "view == localhubGraphView",
+          "group": "navigation@0"
+        },
+        {
+          "command": "localhub.refreshGraph",
+          "when": "view == localhubGraphView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.openGraphFullTab",
+          "when": "view == localhubGraphView",
+          "group": "navigation@2"
+        },
+        {
+          "command": "localhub.openNexusFullTab",
+          "when": "view == localhubGraphView",
+          "group": "navigation@3"
+        },
+        {
+          "command": "localhub.openFeatures",
+          "when": "view == localhubHistory",
+          "group": "navigation@1.1"
+        },
+        {
+          "command": "localhub.openFeatures",
+          "when": "view == localhubFeaturesView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "localhub.showSymbolTimeline",
+          "when": "view == localhubHistory",
+          "group": "navigation@9"
+        },
+        {
+          "command": "localhub.openDashboardFullTab",
+          "when": "view == localhubDashboard",
+          "group": "navigation@0"
+        },
+        {
+          "command": "localhub.openDashboardFullTab",
+          "when": "view == localhubHistory",
+          "group": "navigation@10"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "localhub.showDiff",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "inline@1"
+        },
+        {
+          "command": "localhub.restore",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "inline@2"
+        },
+        {
+          "command": "localhub.showHunks",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "inline@3"
+        },
+        {
+          "command": "localhub.toggleStar",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "inline@4"
+        },
+        {
+          "command": "localhub.showTreeDiff",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "inline@5"
+        },
+        {
+          "command": "localhub.showDiffNavigator",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "inline@6"
+        },
+        {
+          "command": "localhub.showTreeDiff",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "1_actions@0"
+        },
+        {
+          "command": "localhub.showDiff",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.restore",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.showHunks",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "1_actions@3"
+        },
+        {
+          "command": "localhub.toggleStar",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "1_actions@4"
+        },
+        {
+          "command": "localhub.editReason",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "1_actions@5"
+        },
+        {
+          "command": "localhub.deleteSnapshot",
+          "when": "view == localhubHistory && viewItem == snapshot",
+          "group": "2_danger@1"
+        },
+        {
+          "command": "localhub.showHistory",
+          "when": "view == localhubFiles",
+          "group": "inline"
+        },
+        {
+          "command": "localhub.restoreDeletedFile",
+          "when": "(view == localhubFiles || view == localhubDeleted) && viewItem == deletedFile",
+          "group": "1_restore@1"
+        },
+        {
+          "command": "localhub.deleteFileHistory",
+          "when": "view == localhubFiles",
+          "group": "2_danger@1"
+        },
+        {
+          "command": "localhub.deleteGroup",
+          "when": "view == localhubGroups && (viewItem == group || viewItem == forgottenGroup || viewItem == branchHeadGroup || viewItem == branchHeadReturnGroup)",
+          "group": "inline"
+        },
+        {
+          "command": "localhub.showGroupDetails",
+          "when": "view == localhubGroups && (viewItem == group || viewItem == forgottenGroup || viewItem == branchHeadGroup || viewItem == branchHeadReturnGroup)",
+          "group": "inline@0"
+        },
+        {
+          "command": "localhub.showGroupDetails",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup",
+          "group": "inline@1"
+        },
+        {
+          "command": "localhub.returnToBranchHead",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup && !localhub.groupCheckoutBusy",
+          "group": "inline@0"
+        },
+        {
+          "command": "localhub.checkoutGroup",
+          "when": "view == localhubGroups && viewItem == group && !localhub.groupCheckoutBusy",
+          "group": "inline@1"
+        },
+        {
+          "command": "localhub.returnToThisTmGroup",
+          "when": "view == localhubGroups && viewItem == forgottenGroup && !localhub.groupCheckoutBusy",
+          "group": "inline@1"
+        },
+        {
+          "command": "localhub.returnToBranchHead",
+          "when": "view == localhubGroups && viewItem == branchHeadReturnGroup && !localhub.groupCheckoutBusy",
+          "group": "inline@1"
+        },
+        {
+          "command": "localhub.deleteGroup",
+          "when": "view == localhubGroups && (viewItem == group || viewItem == forgottenGroup || viewItem == branchHeadGroup || viewItem == branchHeadReturnGroup)",
+          "group": "2_danger@1"
+        },
+        {
+          "command": "localhub.deleteGroup",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup",
+          "group": "2_danger@1"
+        },
+        {
+          "command": "localhub.showGroupDetails",
+          "when": "view == localhubGroups && (viewItem == group || viewItem == forgottenGroup || viewItem == branchHeadGroup || viewItem == branchHeadReturnGroup)",
+          "group": "1_actions@0"
+        },
+        {
+          "command": "localhub.returnToThisTmGroup",
+          "when": "view == localhubGroups && viewItem == forgottenGroup && !localhub.groupCheckoutBusy",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.returnToBranchHead",
+          "when": "view == localhubGroups && viewItem == branchHeadReturnGroup && !localhub.groupCheckoutBusy",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.showGroupDetails",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.returnToBranchHead",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup && !localhub.groupCheckoutBusy",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.returnToForgottenGroups",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup && localhub.hasForgottenGroups && !localhub.groupCheckoutBusy",
+          "group": "1_actions@3"
+        },
+        {
+          "command": "localhub.checkoutGroup",
+          "when": "view == localhubGroups && viewItem == group && !localhub.groupCheckoutBusy",
+          "group": "1_actions@4"
+        },
+        {
+          "command": "localhub.restoreGroup",
+          "when": "view == localhubGroups && viewItem == deletedGroup",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.showGroupDetails",
+          "when": "view == localhubGroups && viewItem == deletedGroup",
+          "group": "inline@0"
+        },
+        {
+          "command": "localhub.showGroupDetails",
+          "when": "view == localhubGroups && viewItem == deletedGroup",
+          "group": "1_actions@0"
+        },
+        {
+          "command": "localhub.showGroupTreeDiff",
+          "when": "view == localhubGroups && viewItem == groupFile",
+          "group": "inline@2"
+        },
+        {
+          "command": "localhub.showFullGroupTreeDiff",
+          "when": "view == localhubGroups && (viewItem == group || viewItem == forgottenGroup || viewItem == branchHeadGroup || viewItem == branchHeadReturnGroup)",
+          "group": "inline@3"
+        },
+        {
+          "command": "localhub.showFullGroupTreeDiff",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup",
+          "group": "inline@3"
+        },
+        {
+          "command": "localhub.analyzeGroupTags",
+          "when": "view == localhubGroups && (viewItem == group || viewItem == forgottenGroup || viewItem == branchHeadGroup || viewItem == branchHeadReturnGroup)",
+          "group": "inline@2"
+        },
+        {
+          "command": "localhub.analyzeGroupTags",
+          "when": "view == localhubGroups && viewItem == checkedOutGroup",
+          "group": "inline@2"
+        },
+        {
+          "command": "localhub.showPendingTreeDiff",
+          "when": "view == localhubPending && viewItem == pendingFile",
+          "group": "inline@2"
+        },
+        {
+          "command": "localhub.showDiffNavigator",
+          "when": "view == localhubPending && viewItem == pendingFile",
+          "group": "inline@3"
+        },
+        {
+          "command": "localhub.showDiffNavigator",
+          "when": "view == localhubGroups && viewItem == groupFile",
+          "group": "inline@3"
+        },
+        {
+          "command": "localhub.removeFileFromGroup",
+          "when": "view == localhubGroups && viewItem == groupFile",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.ignoreFileFromGroup",
+          "when": "view == localhubGroups && viewItem == groupFile",
+          "group": "2_ignore@1"
+        },
+        {
+          "command": "localhub.ignoreDirFromGroup",
+          "when": "view == localhubGroups && viewItem == groupFile",
+          "group": "2_ignore@2"
+        },
+        {
+          "command": "localhub.switchBranch",
+          "when": "view == localhubBranches && viewItem == branch",
+          "group": "inline"
+        },
+        {
+          "command": "localhub.switchBranch",
+          "when": "view == localhubBranches && viewItem == branch",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.mergeBranch",
+          "when": "view == localhubBranches && viewItem == branch",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.exportBranch",
+          "when": "view == localhubBranches && viewItem == branch",
+          "group": "1_actions@3"
+        },
+        {
+          "command": "localhub.deleteBranch",
+          "when": "view == localhubBranches && viewItem == branch",
+          "group": "2_danger@1"
+        },
+        {
+          "command": "localhub.restoreBranch",
+          "when": "view == localhubBranches && viewItem == deletedBranch",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.exportBranch",
+          "when": "view == localhubBranches && viewItem == deletedBranch",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.addToIgnore",
+          "when": "view == localhubPending && viewItem == pendingFile",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.addDirToIgnore",
+          "when": "view == localhubPending && viewItem == pendingFile",
+          "group": "1_actions@2"
+        },
+        {
+          "command": "localhub.enablePlugin",
+          "when": "view == localhubPlugins && viewItem == plugin-disabled",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.disablePlugin",
+          "when": "view == localhubPlugins && viewItem == plugin-enabled",
+          "group": "1_actions@1"
+        },
+        {
+          "command": "localhub.removePlugin",
+          "when": "view == localhubPlugins",
+          "group": "2_danger@1"
+        },
+        {
+          "command": "localhub.gwScanFolder",
+          "when": "view == gwFolders && viewItem == gwFolder",
+          "group": "inline@1"
+        },
+        {
+          "command": "localhub.gwRemoveFolder",
+          "when": "view == gwFolders && viewItem == gwFolder",
+          "group": "inline@2"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "localhub.snapshot",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "localhub.diffNav.prev",
+          "group": "navigation@1",
+          "when": "localhubDiffNavActive"
+        },
+        {
+          "command": "localhub.diffNav.next",
+          "group": "navigation@2",
+          "when": "localhubDiffNavActive"
+        },
+        {
+          "command": "localhub.diffNav.accept",
+          "group": "navigation@3",
+          "when": "localhubDiffNavActive"
+        },
+        {
+          "command": "localhub.diffNav.reject",
+          "group": "navigation@4",
+          "when": "localhubDiffNavActive"
+        },
+        {
+          "command": "localhub.diffNav.apply",
+          "group": "navigation@5",
+          "when": "localhubDiffNavActive"
+        },
+        {
+          "command": "localhub.diffNav.stop",
+          "group": "navigation@6",
+          "when": "localhubDiffNavActive"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "localhub.showHistory",
+          "group": "localhub@1"
+        },
+        {
+          "command": "localhub.snapshot",
+          "group": "localhub@2"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "localhub.showHistory",
+          "group": "localhub@1",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "localhub.snapshot",
+          "group": "localhub@2",
+          "when": "resourceScheme == file"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "LocalHub",
+      "properties": {
+        "localhub.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Enable LocalHub** — automatically saves history of all file changes"
+        },
+        "localhub.pythonPath": {
+          "type": "string",
+          "default": "python",
+          "markdownDescription": "**Python Path** — usually no need to change. Specify full path only if Python is not found automatically"
+        },
+        "localhub.serverPort": {
+          "type": "number",
+          "default": 19876,
+          "markdownDescription": "**Server Port** — change only if the port is occupied by another program"
+        },
+        "localhub.reliability.mode": {
+          "type": "string",
+          "enum": [
+            "classic",
+            "resilient"
+          ],
+          "default": "classic",
+          "markdownDescription": "**Reliability Mode** — classic keeps legacy behavior, resilient adds watchdog/recovery safeguards"
+        },
+        "localhub.reliability.controlTimeoutMs": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 30000,
+          "markdownDescription": "**Resilient: Control Timeout (ms)** — timeout for daemon control operations (`0` disables timeout)"
+        },
+        "localhub.reliability.healthIntervalMs": {
+          "type": "number",
+          "default": 10000,
+          "minimum": 1000,
+          "maximum": 120000,
+          "markdownDescription": "**Resilient: Health Interval (ms)** — watchdog health check interval"
+        },
+        "localhub.reliability.healthFailThreshold": {
+          "type": "number",
+          "default": 3,
+          "minimum": 1,
+          "maximum": 20,
+          "markdownDescription": "**Resilient: Health Fail Threshold** — consecutive failed checks before automatic recovery"
+        },
+        "localhub.lhlMode": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**LHL Mode** — automatic grouping of changes after idle timeout"
+        },
+        "localhub.lhl.timeoutMinutes": {
+          "type": "number",
+          "default": 10,
+          "minimum": 1,
+          "maximum": 120,
+          "markdownDescription": "**LHL: Timeout** — minutes of inactivity before auto-grouping"
+        },
+        "localhub.lhl.threshold": {
+          "type": "number",
+          "default": 10,
+          "minimum": 2,
+          "maximum": 100,
+          "markdownDescription": "**LHL: Threshold** — number of saves before auto-grouping"
+        },
+        "localhub.lhl.namePattern": {
+          "type": "string",
+          "default": "Auto #{count} ({time})",
+          "markdownDescription": "**LHL: Name Pattern** — pattern for auto-generated group names. {count}, {time}, {date}, {files}"
+        },
+        "localhub.aiAutoCommit": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**AI Auto-Commit** — automatically confirm pending group when AI agent (Storm Code, Roo Code) completes a task"
+        },
+        "localhub.sandbox.enabled": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Enable Shadow Sandboxes** — expose shadow sandbox creation and management commands in the UI"
+        },
+        "localhub.branches.showZombieByDefault": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Show Zombie Branches by Default** — automatically show deleted (zombie) branches in Branches panel"
+        },
+        "localhub.groups.showZombieByDefault": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Show Zombie TM Groups by Default** — automatically show deleted TM groups in TM Groups panel"
+        },
+        "localhub.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Auto Save** — automatically create snapshots when files change"
+        },
+        "localhub.debounceMs": {
+          "type": "number",
+          "default": 2000,
+          "markdownDescription": "**Auto Save Debounce** — milliseconds to wait after last keystroke before creating snapshot. 2000 = 2 seconds"
+        },
+        "localhub.idleCheckpointMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 0,
+          "maximum": 60,
+          "markdownDescription": "**Idle Checkpoint** — minutes of inactivity before creating a snapshot of all unsaved files. 0 = disabled"
+        },
+        "localhub.maxVersionsPerFile": {
+          "type": "number",
+          "default": 100,
+          "minimum": 10,
+          "maximum": 1000,
+          "markdownDescription": "**Max Versions Per File** — how many snapshots to keep per file. Older versions are auto-deleted"
+        },
+        "localhub.enableGlobalWatcher": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Global Watcher** — monitor files outside VS Code"
+        },
+        "localhub.globalWatcher.bridgeOnProjectOpen": {
+          "type": "boolean",
+          "default": false,
+          "scope": "application",
+          "markdownDescription": "**Global Watcher Bridge on Project Open** — allow the Global Watcher bridge feature to sync effective current changes into LocalHub when a project is opened"
+        },
+        "localhub.globalWatcher.gitStyleDiskVerifyOnProjectOpen": {
+          "type": "boolean",
+          "default": false,
+          "scope": "application",
+          "markdownDescription": "**Git-Style Disk Verify on Project Open** — after the bridge step, run a full project disk verify against the current LocalHub logical state when a project is opened"
+        },
+        "localhub.globalWatchPaths": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "scope": "application",
+          "markdownDescription": "**Global Watch Paths** — visible from any project"
+        },
+        "localhub.localWatchPaths": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "scope": "resource",
+          "markdownDescription": "**Local Watch Paths** — visible only in this project"
+        },
+        "localhub.excludePatterns": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/.localhub/**",
+            "**/__pycache__/**",
+            "**/*.pyc",
+            "**/venv/**",
+            "**/out/**"
+          ],
+          "markdownDescription": "**Exclude Patterns** — these folders will NOT be saved to history. Useful for node_modules, .git and other heavy folders"
+        },
+        "localhub.backup.centralPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**Backup Path** — where to save backups. Leave empty = default AppData folder. Can use USB drive or network path"
+        },
+        "localhub.backup.retentionDays": {
+          "type": "number",
+          "default": 30,
+          "markdownDescription": "**Backup Retention Days** — old versions are auto-deleted. 0 = keep forever"
+        },
+        "localhub.backup.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Enable Backups** — backup copies in case of disk failure or accidental project deletion"
+        },
+        "localhub.backup.autoCleanup": {
+          "type": "string",
+          "enum": [
+            "Startup",
+            "Never"
+          ],
+          "enumDescriptions": [
+            "On VS Code startup — auto-delete old versions",
+            "Never — clean up manually only"
+          ],
+          "default": "Never",
+          "markdownDescription": "**Auto Cleanup** — choose when to auto-delete old snapshots"
+        },
+        "localhub.trash.retentionDays": {
+          "type": "number",
+          "default": 30,
+          "markdownDescription": "**Trash Retention Days** — deleted files can be restored within this period. 0 = keep forever"
+        },
+        "localhub.github.enabled": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Enable GitHub Sync** — upload project to cloud for access from other computers"
+        },
+        "localhub.github.token": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**GitHub Token** — your personal access token (starts with ghp_). [Get a token](https://github.com/settings/tokens)"
+        },
+        "localhub.github.owner": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**GitHub Username** — your GitHub username (e.g. adamgold1)"
+        },
+        "localhub.github.repo": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**GitHub Repository** — repository name on GitHub (e.g. my-project)"
+        },
+        "localhub.github.branch": {
+          "type": "string",
+          "default": "main",
+          "markdownDescription": "**GitHub Branch** — which branch to push files to (usually main)"
+        },
+
+        "localhub.github.syncOnConfirm": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Auto Sync on Confirm** — automatically push to GitHub after each group confirm. If off — will ask"
+        },
+        "localhub.marketplaceUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "markdownDescription": "**Marketplace URL** — server address for downloading plugins. Default is local server"
+        },
+        "localhub.git.syncOnConfirm": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Git: Auto Commit** — automatically create git commit when confirming a LocalHub group"
+        },
+        "localhub.git.autoPush": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "**Git: Auto Push** — automatically git push after commit"
+        },
+        "localhub.git.commitPrefix": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "**Git: Commit Prefix** — prepend this text to every commit message (e.g. [LocalHub])"
+        },
+        "localhub.agentDiary.enabled": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Agent Diary: Enabled** — record action history for AI agents in `.localhub/agent/`"
+        },
+        "localhub.agentDiary.rotationDays": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "markdownDescription": "**Agent Diary: Log Rotation** — delete diary files older than N days. 0 = never delete"
+        },
+
+        "localhub.treeDiff.semanticAnalysis": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Semantic Code Insights** — detect and annotate changes to functions, classes, interfaces and other code symbols. Shows what was added, removed or modified at the semantic level"
+        },
+        "localhub.treeDiff.contextLines": {
+          "type": "number",
+          "default": 3,
+          "minimum": 0,
+          "maximum": 20,
+          "markdownDescription": "**Context Lines** — number of unchanged lines shown around each change for context. More lines help understand surrounding code, fewer lines keep diffs compact"
+        },
+        "localhub.treeDiff.maxChainLength": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10000,
+          "markdownDescription": "**Version Chain Depth** — maximum number of version transitions (v1→v2→v3…) to display per file. Limits long histories to keep the view responsive"
+        },
+        "localhub.treeDiff.includeBaseline": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Show Baseline Version** — include the version before the group as a reference point. Shows what the code looked like before the group's changes began"
+        },
+        "localhub.treeDiff.defaultViewMode": {
+          "type": "string",
+          "enum": ["collapsed", "chain", "summary"],
+          "enumDescriptions": [
+            "Show QuickPick menu with all options (Diff Navigator / WebView / Latest / Pick version)",
+            "Skip menu → open Diff Navigator directly (Accept/Reject)",
+            "Skip menu → open All Diffs WebView directly"
+          ],
+          "default": "collapsed",
+          "markdownDescription": "**Default View Mode** — what happens when you click Show Tree Diff button"
+        },
+        "localhub.treeDiff.reviewMode": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Interactive Review** — enable Accept / Reject buttons on each diff hunk for interactive code review"
+        },
+        "localhub.treeDiff.autoExpandHunks": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Auto-Expand Hunks** — automatically show diff content when a file card is opened. When off, hunks start collapsed and must be clicked to expand"
+        },
+        "localhub.treeDiff.lazyLoading": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "**Lazy Loading (MemRef)** — load file list instantly, fetch diff content on demand via `mem://` references. Dramatically reduces initial load time for large groups (e.g. 14 files × 224 changes = instant instead of 5-20 sec)"
+        },
+        "localhub.icons.theme": {
+          "type": "string",
+          "default": "vivid",
+          "enum": ["vivid", "minimal", "neon", "pastel", "earth", "aurora", "sunset", "ocean", "candy", "matrix"],
+          "enumDescriptions": [
+            "Bold & colorful icons",
+            "Clean monochrome icons",
+            "Neon Glow — cyberpunk style",
+            "Pastel — soft muted tones",
+            "Earth — natural organic tones",
+            "Aurora — northern lights gradients",
+            "Sunset — warm golden hour",
+            "Ocean — deep sea tones",
+            "Candy — sweet pop colors",
+            "Matrix — green hacker terminal"
+          ],
+          "markdownDescription": "**Icon Theme** — file icon style in Tree Diff and other webview panels. 10 themes available"
+        }
+
+      }
+    }
+  },
+  "keybindings": [
+    {
+      "command": "localhub.showBackups",
+      "key": "ctrl+alt+r",
+      "mac": "cmd+alt+r",
+      "when": "editorTextFocus"
+    },
+    {
+      "command": "localhub.restoreBackup",
+      "key": "ctrl+alt+shift+r",
+      "mac": "cmd+alt+shift+r"
+    }
+  ],
+  "scripts": {
+    "vscode:prepublish": "node -e \"console.log('LocalHub public release: using prebuilt runtime bundle')\"",
+    "compile": "node -e \"console.log('LocalHub public release: compile is not used; runtime bundle is already prepared')\"",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
+
