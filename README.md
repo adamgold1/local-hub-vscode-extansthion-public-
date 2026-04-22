@@ -3,7 +3,7 @@
 This repository contains only the public installable build for LocalHub.
 
 Included here:
-- `localhub-3.0.1-win32-x64.vsix`
+- `localhub-time-machine-3.0.1-win32-x64-IslamChomaev-autotray.vsix`
 - `localhub-tray-runtime-win32-x64.zip`
 - install instructions
 
@@ -15,7 +15,7 @@ Not included here:
 
 ## Install
 
-1. Download `localhub-3.0.1-win32-x64.vsix`
+1. Download `localhub-time-machine-3.0.1-win32-x64-IslamChomaev-autotray.vsix`
 2. Open VS Code
 3. Go to Extensions
 4. Open `...` menu
