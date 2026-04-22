@@ -6,13 +6,13 @@
 
 LocalHub is a complete "Time Machine" for your code. Every significant action automatically creates a file snapshot. Branches, groups, diff navigator, AI analytics, plugins, cloud sync, global file monitoring — all out of the box.
 
-![Version](https://img.shields.io/badge/version-3.0.2-blue)
+![Version](https://img.shields.io/badge/version-3.0.3-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
 ![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
 
 🌐 **Website:** [standaloneaistorm.com](https://standaloneaistorm.com)
 
-![Version](https://img.shields.io/badge/version-3.0.2-blue)
+![Version](https://img.shields.io/badge/version-3.0.3-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
 ![Standalone IDE](https://img.shields.io/badge/Standalone%20IDE-supported-purple)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-green)
@@ -199,7 +199,7 @@ LocalHub is a complete "Time Machine" for your code. Every significant action au
 ### From VSIX
 ```bash
 # Download .vsix file
-code --install-extension localhub-time-machine-3.0.2-win32-x64-IslamChomaev-autotray.vsix --force
+code --install-extension localhub-time-machine-3.0.3-win32-x64-IslamChomaev-autotray.vsix --force
 ```
 
 ### From Source (Development)
