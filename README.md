@@ -54,12 +54,6 @@ Open VS Code Quick Open with `Ctrl+P`, paste this command, and press Enter:
 ext install IslamChomaev.localhub-time-machine
 ```
 
-### From VSIX
-
-```powershell
-code --install-extension localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix --force
-```
-
 ### Requirements
 
 - VS Code 1.85+ or a VS Code-based IDE.
@@ -89,7 +83,7 @@ Useful shortcuts:
 
 This Marketplace package is marked as Preview while the lightweight Control Center auto-download flow is being finalized.
 
-The VSIX does not bundle the heavy Control Center runtime. On first launch, LocalHub checks whether the runtime is present and downloads `localhub-tray-runtime-win32-x64.zip` automatically when needed.
+The Marketplace package does not bundle the heavy Control Center runtime. On first launch, LocalHub checks whether the runtime is present and downloads `localhub-tray-runtime-win32-x64.zip` automatically when needed.
 
 Core extension features remain inside the VS Code extension: snapshots, history, TM Groups, branches, diff tools, AI features, Global Watcher bridge, MCP, CLI, plugins, and UI panels.
 
@@ -195,12 +189,6 @@ LocalHub - это автоматическая локальная история
 ext install IslamChomaev.localhub-time-machine
 ```
 
-Или установите VSIX локально:
-
-```powershell
-code --install-extension localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix --force
-```
-
 Требования:
 
 - VS Code 1.85+ или IDE на базе VS Code.
@@ -234,7 +222,6 @@ Islam Dev
 ## Links
 
 - Visual Studio Marketplace: https://marketplace.visualstudio.com/items?itemName=IslamChomaev.localhub-time-machine
-- Direct VSIX download: https://github.com/adamgold1/local-hub-vscode-extansthion-public-/raw/main/localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix
 - Public release repository: https://github.com/adamgold1/local-hub-vscode-extansthion-public-
 - Website: https://standaloneaistorm.com
 - Storm Code Companion: https://github.com/adamgold1/Storm_Code.-PUBLIC
