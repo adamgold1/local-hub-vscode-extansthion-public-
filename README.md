@@ -3,10 +3,22 @@
 LocalHub is automatic local version history for VS Code and VS Code-based IDEs.
 It keeps snapshots of your files in the background, shows what changed, and lets you recover code without manually creating Git commits.
 
+Preview release: this Marketplace package stays lightweight while the Control Center runtime is downloaded automatically when needed.
+
+[Website](https://standaloneaistorm.com)
+
 ![Version](https://img.shields.io/badge/version-3.0.7-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-green)
 ![Status](https://img.shields.io/badge/status-preview-orange)
+
+## What's New in 3.0.7
+
+- Fixed **Delete ALL (With Snapshots)** for TM Groups: deleted groups now move to Zombie Trash, their files disappear from the group tree, and restore relinks the hidden snapshots correctly.
+- Added startup repair for existing databases where zombie TM Groups still had snapshots attached after deletion.
+- Removed the duplicate **GW Storage Settings** card from LocalHub Settings; Global Watcher keeps its own storage controls in the Global Watcher panel.
+- Added the current project name to LocalHub sidebar section headers so it is easier to see which workspace is active.
+- Kept the lightweight Marketplace package with Control Center runtime auto-download.
 
 ## What It Does
 
@@ -152,6 +164,16 @@ lh push
 
 LocalHub - это автоматическая локальная история версий для VS Code и IDE на базе VS Code.
 Расширение сохраняет снимки файлов в фоне, показывает изменения и помогает вернуть код без ручных Git-коммитов.
+
+Предварительная версия: Marketplace-пакет остается легким, а Control Center runtime скачивается автоматически при необходимости.
+
+## Что нового в 3.0.7
+
+- Исправлено **Delete ALL (With Snapshots)** для TM Groups: удаленная группа уходит в Zombie Trash, файлы пропадают из дерева группы, а восстановление заново привязывает скрытые снимки.
+- Добавлен repair при старте для старых баз, где zombie TM Group уже была сломана и snapshots оставались привязанными.
+- Убран дублирующий блок **GW Storage Settings** из LocalHub Settings; настройки хранения остаются в панели Global Watcher.
+- Имя текущего проекта показывается в верхних секциях LocalHub sidebar.
+- Marketplace-пакет остается легким, Control Center runtime скачивается автоматически.
 
 ## Что умеет LocalHub
 
