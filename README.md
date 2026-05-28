@@ -212,8 +212,7 @@ Islam Dev
 ## Links
 
 - Visual Studio Marketplace: https://marketplace.visualstudio.com/items?itemName=IslamChomaev.localhub-time-machine
-- Direct VSIX download: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/IslamChomaev/vsextensions/localhub-time-machine/3.0.7/vspackage
-- Public VSIX mirror: https://github.com/adamgold1/local-hub-vscode-extansthion-public-/raw/main/localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix
+- Direct VSIX download: https://github.com/adamgold1/local-hub-vscode-extansthion-public-/raw/main/localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix
 - Public release repository: https://github.com/adamgold1/local-hub-vscode-extansthion-public-
 - Website: https://standaloneaistorm.com
 - Storm Code Companion: https://github.com/adamgold1/Storm_Code.-PUBLIC
