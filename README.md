@@ -3,7 +3,7 @@
 LocalHub is automatic local version history for VS Code and VS Code-based IDEs.
 It keeps snapshots of your files in the background, shows what changed, and lets you recover code without manually creating Git commits.
 
-![Version](https://img.shields.io/badge/version-3.0.6-blue)
+![Version](https://img.shields.io/badge/version-3.0.7-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-green)
 ![Status](https://img.shields.io/badge/status-preview-orange)
@@ -45,7 +45,7 @@ ext install IslamChomaev.localhub-time-machine
 ### From VSIX
 
 ```powershell
-code --install-extension localhub-time-machine-3.0.6-win32-x64-IslamChomaev-autotray.vsix --force
+code --install-extension localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix --force
 ```
 
 ### Requirements
@@ -176,7 +176,7 @@ ext install IslamChomaev.localhub-time-machine
 Или установите VSIX локально:
 
 ```powershell
-code --install-extension localhub-time-machine-3.0.6-win32-x64-IslamChomaev-autotray.vsix --force
+code --install-extension localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix --force
 ```
 
 Требования:
@@ -213,7 +213,7 @@ Islam Dev
 
 - Visual Studio Marketplace: https://marketplace.visualstudio.com/items?itemName=IslamChomaev.localhub-time-machine
 - Direct VSIX download: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/IslamChomaev/vsextensions/localhub-time-machine/3.0.6/vspackage
-- Public VSIX mirror: https://github.com/adamgold1/local-hub-vscode-extansthion-public-/raw/main/localhub-time-machine-3.0.6-win32-x64-IslamChomaev-autotray.vsix
+- Public VSIX mirror: https://github.com/adamgold1/local-hub-vscode-extansthion-public-/raw/main/localhub-time-machine-3.0.7-win32-x64-IslamChomaev-autotray.vsix
 - Public release repository: https://github.com/adamgold1/local-hub-vscode-extansthion-public-
 - Website: https://standaloneaistorm.com
 - Storm Code Companion: https://github.com/adamgold1/Storm_Code.-PUBLIC
