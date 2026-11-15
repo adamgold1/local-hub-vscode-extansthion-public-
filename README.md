@@ -7,10 +7,18 @@ Preview release: this Marketplace package stays lightweight while the Control Ce
 
 [Website](https://standaloneaistorm.com)
 
-![Version](https://img.shields.io/badge/version-3.0.7-blue)
+![Version](https://img.shields.io/badge/version-3.0.10-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.85%2B-blue)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-green)
 ![Status](https://img.shields.io/badge/status-preview-orange)
+
+## What's New in 3.0.10
+
+- Added recovery and notifications for missing or changed LocalHub ignore files.
+- GitHub sync stops safely when ignore rules cannot be read or change during synchronization.
+- Improved TM Group cloud status for partial syncs, including file-level error details and verified deletions.
+- Improved handling and validation of Windows workspace paths.
+- Added a dedicated LocalHub GitHub Sync output channel.
 
 ## What's New in 3.0.7
 
@@ -83,7 +91,7 @@ Useful shortcuts:
 
 This Marketplace package is marked as Preview while the lightweight Control Center auto-download flow is being finalized.
 
-The Marketplace package does not bundle the heavy Control Center runtime. On first launch, LocalHub checks whether the runtime is present and downloads `localhub-tray-runtime-win32-x64.zip` automatically when needed.
+The VSIX does not bundle the heavy Control Center runtime. On first launch, LocalHub checks whether the runtime is present and downloads `localhub-tray-runtime-win32-x64.zip` automatically when needed.
 
 Core extension features remain inside the VS Code extension: snapshots, history, TM Groups, branches, diff tools, AI features, Global Watcher bridge, MCP, CLI, plugins, and UI panels.
 
@@ -160,6 +168,14 @@ LocalHub - это автоматическая локальная история
 Расширение сохраняет снимки файлов в фоне, показывает изменения и помогает вернуть код без ручных Git-коммитов.
 
 Предварительная версия: Marketplace-пакет остается легким, а Control Center runtime скачивается автоматически при необходимости.
+
+## Что нового в 3.0.10
+
+- Добавлены восстановление ignore-файлов LocalHub и уведомления об изменениях или потере правил.
+- Синхронизация с GitHub безопасно останавливается, если правила исключений невозможно прочитать или они изменились во время операции.
+- Улучшен статус облачной синхронизации TM Groups: частичные результаты, ошибки отдельных файлов и подтверждённые удаления.
+- Улучшены обработка и проверка путей рабочих папок Windows.
+- Добавлен отдельный канал вывода LocalHub GitHub Sync.
 
 ## Что нового в 3.0.7
 
